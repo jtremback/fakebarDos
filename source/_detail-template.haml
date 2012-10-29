@@ -1,13 +1,15 @@
 %script{:id => "detail-template.html", :type => "text/ng-template"}
-  %li.hyp-paper.hyp-excerpt
+  %li.paper.excerpt
     %blockquote {{annotation.excerpt}}
-  %li.hyp-annotation.hyp-paper.hyp-detail.collapsed
-    .margin-counter
-    <div class="hyp-score {{reply.stance}}">{{reply.score}}</div>
-    .topbar
-      .hyp-user {{annotation.username}}
-      .hyp-time {{annotation.time}}
-    .hyp-content {{annotation.text}}
-    %ul.annotator-listing
-      %li.hyp-annotation.hyp-detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}
-    
+  %li.annotation.paper.detail
+    %a.threadexp{:href => "#collapse"}
+    .time {{annotation.time}}
+    .user {{annotation.username}}
+    .annotator-controls
+      %a.write{:href => "#reply"} Reply
+    .body {{annotation.text}}
+    .bottombar
+      %span.replycount {{annotation.count}}
+    .thread
+      %ul.annotator-listing
+        %li.annotation.detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}

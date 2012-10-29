@@ -59,7 +59,7 @@ bviewHtml =
   """
 <div class="annotator-outer annotator-viewer">
   <ul class="annotator-widget annotator-listing">
-      <li summary="exp" class="hyp-annotation hyp-summary hyp-paper" ng-repeat="child in node.children" node="child" parent="node"></div>
+      <li summary="exp" class="annotation summary paper" ng-repeat="child in node.children" node="child" parent="node"></div>
   </ul>
 </div>
   """
@@ -81,11 +81,11 @@ link : (scope, elem, attrs) ->
 summHtml =
   """
 <div class="topbar">
-  <div class="hyp-user">{{node.username}}</div>
-  <div class="hyp-time">{{node.time}}</div>
+  <div class="user">{{node.username}}</div>
+  <div class="time">{{node.time}}</div>
 </div>
 
-<div class="hyp-content">{{node.text}}</div>
+<div class="content">{{node.text}}</div>
 
   """
 
@@ -120,21 +120,21 @@ dviewHtml =
   """
 <div class="annotator-outer annotator-viewer">
   <ul class="annotator-widget annotator-listing">
-    <li class='hyp-paper hyp-excerpt'>
+    <li class='paper excerpt'>
       <blockquote>{{node.excerpt}}</blockquote>
     </li>
 
-    <li class="hyp-annotation hyp-paper hyp-detail">
+    <li class="annotation paper detail">
 
       <div class="topbar">
-        <div class="hyp-user">{{node.username}}</div>
-        <div class="hyp-time">{{node.time}}</div>
+        <div class="user">{{node.username}}</div>
+        <div class="time">{{node.time}}</div>
       </div>
-      <div class='hyp-content'>{{node.text}}</div>
+      <div class='content'>{{node.text}}</div>
 
-      <div class="hyp-thread">
+      <div class="thread">
         <ul class="annotator-listing">
-          <li tree="exp" class="hyp-annotation hyp-detail" ng-repeat="child in node.children" node="child" parent="node"></li>
+          <li tree="exp" class="annotation detail" ng-repeat="child in node.children" node="child" parent="node"></li>
         </ul>
       </div>
 
@@ -158,15 +158,15 @@ app.directive 'tree', ($compile) -> {
 
 treeHtml =
   """
-<a class="hyp-threadexp" href="#collapse"></a>
+<a class="threadexp" href="#collapse"></a>
 <div class="topbar">
-  <div class="hyp-user">{{node.username}}</div>
-  <div class="hyp-time">{{node.time}}</div>
+  <div class="user">{{node.username}}</div>
+  <div class="time">{{node.time}}</div>
 </div>
-<div class="hyp-content">{{node.text}}</div>
-<div class="hyp-thread">
+<div class="content">{{node.text}}</div>
+<div class="thread">
   <ul class="annotator-listing"> 
-    <li tree="exp" class="hyp-annotation hyp-detail" ng-repeat="child in node.children" node="child" parent="node"></li>
+    <li tree="exp" class="annotation detail" ng-repeat="child in node.children" node="child" parent="node"></li>
 
   </ul>
 </div>

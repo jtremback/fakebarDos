@@ -1,14 +1,5 @@
 .annotator-frame
-  #toolbar.shown{:style => "top: 0px;"}
-    .tri
-    .tinyman
-      %a willardM_romney
-    .thispage
-      %a <span>This Page</span>
-    .history
-      %a <span>My History</span>
-    .search
-      %a <span>Search</span>
+  = partial "toolbar.haml"
   #gutter
     #wrapper1.wrapper(ng-controller="BucketList")  
       .annotator-outer.annotator-viewer
@@ -21,49 +12,4 @@
         %ul.annotator-listing.annotator-widget{"ng-include" => "'history-template.html'", "ng-repeat" => "annotation in annotations"}
 
 
-  %svg.annotator-heatmap{:version => "1.1", :xmlns => "http://www.w3.org/2000/svg"}
-    %defs
-      %linearGradient#heatmap-gradient{:x2 => "0", :y2 => "100%"}
-        %stop{:offset => "0.46843879796281646", "stop-color" => "#ffffff", "stop-opacity" => "0.10000000000005556"}
-        %stop{:offset => "0.5760250272229407", "stop-color" => "#6e7c8a", "stop-opacity" => "0.6608510454805697"}
-        %stop{:offset => "0.5837468634181633", "stop-color" => "#687787", "stop-opacity" => "0.7442486461847345"}
-        %stop{:offset => "0.5885182816469656", "stop-color" => "#647485", "stop-opacity" => "0.7986694541148052"}
-        %stop{:offset => "0.592022922534255", "stop-color" => "#617283", "stop-opacity" => "0.840047330975145"}
-        %stop{:offset => "0.5948116208671689", "stop-color" => "#5f7182", "stop-opacity" => "0.8738227506998564"}
-        %stop{:offset => "0.5971368019705473", "stop-color" => "#5e6f81", "stop-opacity" => "0.9025604223176149"}
-        %stop{:offset => "0.5991360602132221", "stop-color" => "#5c6e81", "stop-opacity" => "0.9276888284448244"}
-        %stop{:offset => "0.6008929830692638", "stop-color" => "#5b6d80", "stop-opacity" => "0.9500911205157078"}
-        %stop{:offset => "0.6024622924287215", "stop-color" => "#5a6d7f", "stop-opacity" => "0.9703541044857108"}
-        %stop{:offset => "0.6038818359375", "stop-color" => "#596c7f", "stop-opacity" => "0.9888888888888888"}
-        %stop{:offset => "0.6219537168093714", "stop-color" => "#667686", "stop-opacity" => "0.7675086691324964"}
-        %stop{:offset => "0.6386031286566822", "stop-color" => "#74808d", "stop-opacity" => "0.5915646733163437"}
-        %stop{:offset => "0.6540475609423849", "stop-color" => "#828a92", "stop-opacity" => "0.45237188334320866"}
-        %stop{:offset => "0.6684575045434845", "stop-color" => "#8f959a", "stop-opacity" => "0.34334752094212184"}
-        %stop{:offset => "0.68196916848207", "stop-color" => "#9c9fa2", "stop-opacity" => "0.2593997557640796"}
-        %stop{:offset => "0.6946931524596859", "stop-color" => "#a9aaac", "stop-opacity" => "0.19652100217496937"}
-        %stop{:offset => "0.7067205299216033", "stop-color" => "#b6b7b8", "stop-opacity" => "0.1515093088605948"}
-        %stop{:offset => "0.7181272194050573", "stop-color" => "#c5c5c5", "stop-opacity" => "0.12177263008541392"}
-        %stop{:offset => "0.7289771927807184", "stop-color" => "#d6d6d6", "stop-opacity" => "0.10518827281392727"}
-        %stop{:offset => "0.7393248739121835", "stop-color" => "#ffffff", "stop-opacity" => "0.10000000000005556"}
-        %stop{:offset => "1", "stop-color" => "#ffffff", "stop-opacity" => "0.10000000000005556"}
-      %filter#heatmap-blur
-        %feGaussianBlur{:stdDeviation => "0 2"}
-    %rect{:fill => "url('#heatmap-gradient')", :filter => "url('#heatmap-blur')", :height => "100%", :width => "100%", :x => "0", :y => "0"}
-
-  .hyp-heatmap-tab.upper.emphasis(style="top: 50px;")
-    .label 233
-    %svg{:class => "svg", :baseProfile => "full", :contentStyleType => "text/css", :preserveAspectRatio => "none", :version => "1.2", :viewBox => "0 0 100 100", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :zoomAndPan => "magnify"}
-      %polygon{:class => "tab", :points => "5.0,90.0 10.0,95.0 90.0,95.0 95.0,90.0 95.0,30.0 50.0,5.0 5.0,30.0", "stroke-linejoin" => "bevel", "stroke-width" => "1px", "vector-effect" => "non-scaling-stroke"}/
-      %polygon{:class => "insert", :visibility => "hidden", :fill => "#FFEA00", :points => "95.0,35.0 50.0,10.0 5.0,35.0", :stroke => "black", "stroke-linejoin" => "bevel", "stroke-width" => ".5px", "vector-effect" => "non-scaling-stroke"}/
-
-  .hyp-heatmap-tab.side.one(style="top: 170px;")
-    .label 233
-    %svg{ :class => "svg", :baseProfile => "full", :contentScriptType => "text/ecmascript", :contentStyleType => "text/css", :preserveAspectRatio => "none", :version => "1.2", :viewBox => "0 0 100 100", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :zoomAndPan => "disable"}
-      %polygon{:class => "tab", :fill => "#666", :points => "20.0,95.0 5.0,50.0 20.0,5.0 90.0,5.0 95.0,15.0 95.0,85.0 90.0,95.0", :stroke => "black", "stroke-linejoin" => "bevel", "stroke-width" => "1px", "vector-effect" => "non-scaling-stroke"}
-      %polygon{:class => "insert", :visibility => "hidden", :fill => "#FFEA00", :points => "25.0,95.0 10.0,50.0 25.0,5.0", :stroke => "black", "stroke-linejoin" => "bevel", "stroke-width" => ".5px", "vector-effect" => "non-scaling-stroke"}
-
-  .hyp-heatmap-tab.lower
-    .label 233
-    %svg{:class => "svg", :baseProfile => "full", :contentStyleType => "text/css", :preserveAspectRatio => "none", :version => "1.2", :viewBox => "0 0 100 100", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :zoomAndPan => "magnify"}
-      %polygon{:class => "tab", :fill => "#666", :points => "5.0,10.0 10.0,5.0 90.0,5.0 95.0,10.0 95.0,70.0 50.0,95.0 5.0,70.0", :stroke => "black", "stroke-linejoin" => "bevel", "stroke-width" => "1px", "vector-effect" => "non-scaling-stroke"}/
-      %polygon{:class => "insert", :visibility => "hidden", :fill => "#FFEA00", :points => "95.0,65.0 50.0,90.0 5.0,65.0", :stroke => "black", "stroke-linejoin" => "bevel", "stroke-width" => ".5px", "vector-effect" => "non-scaling-stroke"}/
+  = partial "heatmap.haml"

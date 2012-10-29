@@ -1,8 +1,9 @@
 @import 'base';
 @import 'compass/reset/utilities';
 
-/* Annotator styles */
 
+
+//ADDER////////////////////////////////
 .annotator-adder {
   $border: #333;
   $hoverborder: #000;
@@ -53,7 +54,7 @@
   }
 
   &:hover {
-    @include box-shadow(1px 1px 6px -2px $gray-light);
+    @include box-shadow(1px 1px 6px -2px $grayLight);
     border-color: $hoverborder;
 
     &:before {
@@ -67,6 +68,8 @@
 }
 
 
+
+//HIGHLIGHTS////////////////////////////////
 .annotator-hl {
   @include single-transition('background-color,color', .03s, linear, .1s);
 }
@@ -92,10 +95,10 @@
   display: none;
 }
 
-/* iframe styles */
 
+
+//IFRAME////////////////////////////////
 .annotator-frame {
-  @include single-transition(margin-left, .4s);
   height: 100%;
   position: fixed;
   top: 0;
@@ -103,8 +106,9 @@
   z-index: 500;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
-  &.annotator-collapsed { 
-    margin-left: -$heatmap-width - 10px;
+  &.annotator-collapsed {
+    margin-left: -$heatmap-width - 17px;
+
   }
 }
 
@@ -117,8 +121,8 @@
 
 @media screen and (min-width: 15em) {
   .annotator-frame {
-    width: 90%;
-    margin-left: -90%;
+    width: 99%;
+    margin-left: -99%;
   }
 }
 
@@ -143,8 +147,9 @@
 
 @media screen and (min-width: 37.5em) {
   .annotator-frame {
-    width: 428px + $heatmap-width + 10px;
-    margin-left: -428px - $heatmap-width - 10px;
+    @include single-transition(margin-left, .4s);
+    width: 428px + $heatmap-width + 17px;
+    margin-left: -428px - $heatmap-width - 17px;
   }
 }
 

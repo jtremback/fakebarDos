@@ -93,7 +93,7 @@ annoHtml =
     <div class="control">
       <a class="goto"><div class="inner">To Annotation</div></a>
     </div>
-    <li class="hyp-annotation hyp-paper hyp-detail hyp-excerpt" ng-click="showHide=!showHide">   
+    <li class="annotation paper detail excerpt" ng-click="showHide=!showHide">   
       <div class="page">
         <a href="{{node.link}}">{{node.page|truncate:60}}</a>
         <div class="domain">{{node.domain}}<img class="favicon" ng-src="http://{{node.domain}}/favicon.ico"/>
@@ -106,15 +106,15 @@ annoHtml =
         {{node.excerpt}}
       </blockquote>
       <div class="topbar">
-        <div class="hyp-user">{{node.username}}</div>
-        <div class="hyp-time">{{node.time}}</div>
+        <div class="user">{{node.username}}</div>
+        <div class="time">{{node.time}}</div>
       </div>    
-      <div class="hyp-content" ng-hide="showHide">{{node.text|truncate:200}}</div>
-      <div class="hyp-content" ng-show="showHide">{{node.text}}</div>
-      <div class="hyp-thread">
+      <div class="content" ng-hide="showHide">{{node.text|truncate:200}}</div>
+      <div class="content" ng-show="showHide">{{node.text}}</div>
+      <div class="thread">
         <ul class="annotator-listing" ng-show="showHide">
 
-        <li tree="exp" class="hyp-annotation hyp-detail" ng-repeat="child in node.children" node="child" parent="node"></li>
+        <li tree="exp" class="annotation detail" ng-repeat="child in node.children" node="child" parent="node"></li>
 
         </ul>
       </div>
@@ -146,25 +146,25 @@ app.directive 'tree', ($compile) -> {
 
 treeHtml =
   """
-<a class="hyp-threadexp" href="#collapse"></a>
+<a class="threadexp" href="#collapse"></a>
 <div class="topbar">
-  <div class="hyp-user">{{node.username}}</div>
+  <div class="user">{{node.username}}</div>
   <di  background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 100%;v class="hyp-time">{{node.time}}</div>
+  background-size: 100% 100%;v class="time">{{node.time}}</div>
 </div>
-<div class="hyp-content">{{node.text}}</div>
-<div class="hyp-thread">
+<div class="content">{{node.text}}</div>
+<div class="thread">
   <ul class="annotator-listing"> 
 
-      <li tree="exp" class="hyp-annotation hyp-detail" ng-repeat="child in node.children" node="child" parent="node"></li>
+      <li tree="exp" class="annotation detail" ng-repeat="child in node.children" node="child" parent="node"></li>
 
   </ul>
 </div>
 
   """
   # <div class="annotator-controls">
-  #  <a href="#reply" class="hyp-write">Reply</a>
+  #  <a href="#reply" class="write">Reply</a>
   # </div>
 
 @BuckEt = ($scope) ->

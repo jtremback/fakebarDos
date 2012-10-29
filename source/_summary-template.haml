@@ -1,6 +1,5 @@
 %script{:id => "summary-template.html", :type => "text/ng-template"}
-  %li.hyp-paper.hyp-summary
-    .topbar
-      .hyp-user {{annotation.username}}
-      .hyp-time {{annotation.time}}
-    .hyp-content {{annotation.text}}
+  %li.paper.annotation.summary
+    .time {{annotation.time}}
+    .user {{annotation.username}}
+    .body {{annotation.text}}

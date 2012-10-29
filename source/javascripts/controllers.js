@@ -92,6 +92,7 @@ function DetailList($scope) {
       score: 86,
       excerpt: "Demonstrators seized bottles of liquor and wine from the offices along with cartons of cigarettes, items which Chinese officials frequently receive as bribes. A photograph posted on Sina Weibo, the main Chinese microblogging service, showed some of the items displayed outside the government building.",
       text: "Chinese officials sound really easy to bribe.",
+      count: "15 replies",
       children: [
         {
           username: "notouch",
@@ -99,6 +100,7 @@ function DetailList($scope) {
           stance: "pos",
           score: 16,
           text: "Just talked to someone who came here from China. Apparently foreign liquor and cigarettes cost ten-fold of its original price, if not more. So these things are easily $100 each. Not to mention these were only items found in the office, not their private mansion. Also learned that it's very common to treat someone to dinner or a massage parlor as form of bribery. A good fancy dinner cost a few hundred dollars, even thousands of dollars. The massage parlor usually offer some special kind of service in the back-end.",
+          count: "3 replies",
           children: [
             {
               username: "elmer_the_arse",
@@ -106,6 +108,7 @@ function DetailList($scope) {
               stance: "neut",
               score: 32,
               text: "what if the corrupt official does't like 'the special kind of service in the back end'?",
+              count: "1 reply",
               children: [
                 {
                   username: 'notouch',
@@ -131,6 +134,7 @@ function DetailList($scope) {
           stance: "neut",
           score: 47,
           text: 'China has had some of the most insanely fast economic growth of world history in the past couple of decades. Very few will protest until this kind of growth stops.',
+          count: "10 replies",
           children: [
             {
               username: 'dingdongpuddi',
@@ -138,6 +142,7 @@ function DetailList($scope) {
               stance: "neg",
               score: 10,
               text: "Actually there's been many reports on how little, if any, benefits of this decades-long growth for the poor and rural. Here's one such report: http://www.nytimes.com/2008/01/13/world/asia/13china.html?pagewanted=all",
+              count: "9 replies",
               children: [
                 {
                   username: 'anarcho-fox',
@@ -145,6 +150,7 @@ function DetailList($scope) {
                   stance: "neg",
                   score: 36,
                   text: 'its becuase the chinese rural poor are the government sanctioned rural poor...they arent allowed to join into the urban growth because they are designated rural workers http://en.wikipedia.org/wiki/Hukou_system china has a form of caste system thats not talked about much...the government fears that ending it would catapult all the rural poor into the cities and that it would fuck everything up',
+                  count: "7 replies",
                   children: [
                     {
                       username: 'TBradley',
@@ -159,6 +165,7 @@ function DetailList($scope) {
                       stance: "pos",
                       score: 15,
                       text: "I remember seeing a video on reddit a year or so ago where an economist was displaying the vast wealth disparities in china based on the province. Without really getting into details, it showed how many of the most industrialized urban areas had wealth equivalent to the wealthiest western nations while the rural areas had wealth equivalent to some of the poorest areas in Africa. I can't seem to find it though, anyone know what I'm talking about?",
+                      count: "5 replies",
                       children: [
                         {
                           username: 'AmIKawaiiUguuu',
@@ -166,6 +173,7 @@ function DetailList($scope) {
                           stance: "neut",
                           score: 10,
                           text: 'http://www.economist.com/content/chinese_equivalents',
+                          count: "3 replies",
                           children: [
                             {
                               username: 'green_flash',
@@ -173,6 +181,7 @@ function DetailList($scope) {
                               stance: "neg",
                               score: 21,
                               text: "If you look at GDP per capita, it's actually not that bad. Even the poorest province (Guizhou) is still on the same level as India. And with the exemption of city states like HK, Macau, Shanghai, Beijing and Tianjin no province is richer than 4 times the poorest. That's better than Brazil and India inequality-wise, but not as good as in the US of course: Mississippi has about half the GDP per capita of Connecticut, one of the richest.",
+                              count: "2 replies",
                               children: [
                                 {
                                   username: 'polarenvy',
@@ -180,6 +189,7 @@ function DetailList($scope) {
                                   stance: "pos",
                                   score: 10,
                                   text: "China is not the police state most people in the West imagine it to be.",
+                                  count: "1 reply",
                                   children: [
                                     {
                                       username: 'TheMediumPanda',

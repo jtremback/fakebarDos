@@ -1,15 +1,15 @@
 %script{:id => "replies-template.html", :type => "text/ng-template"} 
-  .nothread
-    <div class="hyp-score {{reply.stance}}">{{reply.score}}</div>
-    %a.hyp-threadexp{:href => "#collapse"}
-    .topbar
-      .hyp-user {{reply.username}}
-      .hyp-time {{reply.time}}
-      .annotator-controls
-        %a.hyp-write{:href => "#reply"} Reply
-    .hyp-content {{reply.text}}
-  %ul.annotator-listing
-    %li.hyp-annotation.hyp-detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in reply.children"}
+  %a.threadexp{:href => "#collapse"}
+  .time {{reply.time}}
+  .user {{reply.username}}
+  .annotator-controls
+    %a.write{:href => "#reply"} Reply
+  .body {{reply.text}}
+  .bottombar
+    %span.replycount {{reply.count}}
+  .thread
+    %ul.annotator-listing
+      %li.annotation.detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in reply.children"}
   
 
 

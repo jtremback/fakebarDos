@@ -2,11 +2,11 @@
   %li.noiseknockout
     .page
       <img class="favicon" ng-src="http://{{annotation.domain}}/favicon.ico"/><a href="{{annotation.domain}}">{{annotation.domain}}</a> | <a href="{{annotation.link}}">{{annotation.page|truncate:80}}</a>
-    .hyp-paper.hyp-excerpt
+    .paper.excerpt
       %blockquote
         {{annotation.excerpt|truncate:140}}
-    .hyp-paper.hyp-summary
+    .paper.summary
       .topbar
-        .hyp-user {{annotation.username}}
-        .hyp-time {{annotation.time}}
-      .hyp-content {{annotation.text|truncate:140}}
+        .user {{annotation.username}}
+        .time {{annotation.time}}
+      .content {{annotation.text|truncate:140}}

@@ -48,7 +48,7 @@ ol {
   }
 
   .bookmarklet {
-    @extend .hyp-button;
+    @extend .button;
     border: 1px dashed $gray;
   }
 }

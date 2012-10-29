@@ -10,7 +10,7 @@ $.abovethetop = function(element, settings) {
 
 $(document).ready(function(){
 
-  $(".hyp-summary").click(function(event){
+  $(".summary").click(function(event){
     $("#wrapper2").addClass("out");
     $("#wrapper1").addClass("compressed");
     $("#wrapper3").addClass("compressed");
@@ -31,7 +31,7 @@ $(document).ready(function(){
     $("#wrapper2").removeClass("out");
     $("#wrapper1").removeClass("compressed");
     $("#wrapper3").removeClass("compressed");
-    $(".hyp-heatmap-tab").removeClass("flip");
+    $(".heatmap-pointer").removeClass("flip");
   });
 
   $("#wrapper2").click(function(event) {
@@ -39,7 +39,7 @@ $(document).ready(function(){
   });
 
 //FLIPPER
-  $(".hyp-heatmap-tab.side").click(function(event){
+  $(".heatmap-pointer.side").click(function(event){
     event.stopPropagation();
     $(this).addClass("flip");
   });
@@ -47,11 +47,11 @@ $(document).ready(function(){
 
 //THREAD COLLAPSER
   var groups = [];
-  var nodes = $("#wrapper2 .hyp-paper").children(".annotator-listing").children(".hyp-detail")
-  while (nodes.children(".annotator-listing").children(".hyp-detail").length) {
+  var nodes = $("#wrapper2 .paper").children(".annotator-listing").children(".detail")
+  while (nodes.children(".annotator-listing").children(".detail").length) {
     groups.push(nodes);
     console.log(nodes);
-    nodes = nodes.children(".annotator-listing").children(".hyp-detail");
+    nodes = nodes.children(".annotator-listing").children(".detail");
   };
 
   // groups[1].children(".nothread").css("border", "1px solid blue");
@@ -95,14 +95,14 @@ $(document).ready(function(){
 
 });
 
-// groups contain collections of all hyp-details on a certain level
+// groups contain collections of all details on a certain level
 
 
 // groups = []
-// nodes = hyp-paper.children(annotator-listing).children(hyp-detail)
-// while nodes.children(annotator-listing).children(hyp-detail).length
+// nodes = paper.children(annotator-listing).children(detail)
+// while nodes.children(annotator-listing).children(detail).length
 //   groups.push(nodes)
-//   nodes = nodes.children(annotator-listing).children(hyp-detail)
+//   nodes = nodes.children(annotator-listing).children(detail)
 
 // onscroll
 //   i = 0 
@@ -122,11 +122,11 @@ $(document).ready(function(){
   // //If no annotation bodies at a certain level are on screen, squish the level.
   // var scroller = $("#wrapper2");
   // var nothread = scroller.find(".nothread");
-  // var detail = scroller.find(".hyp-detail")
+  // var detail = scroller.find(".detail")
 
-  // //set data about the depth of each .hyp-detail
+  // //set data about the depth of each .detail
   // detail.each(function(){
-  //   var depth = $(this).parentsUntil($(".hyp-paper"), ".hyp-detail").length;
+  //   var depth = $(this).parentsUntil($(".paper"), ".detail").length;
   //   $(this).data("depth", depth);
   //   console.log(depth);
   // });
@@ -156,8 +156,8 @@ $(document).ready(function(){
   //   });
 
     // target.each(function(){
-    //   var depth = target.parentsUntil($(".hyp-detail"), ".hyp-paper").length;
-    //   var all_at_depth = target.filter(function(){ $(this).parentsUntil($(".hyp-detail"), ".hyp-paper").length == depth; });
+    //   var depth = target.parentsUntil($(".detail"), ".paper").length;
+    //   var all_at_depth = target.filter(function(){ $(this).parentsUntil($(".detail"), ".paper").length == depth; });
     //   if ($(this).data("offscreen") === "true"){
     //     all_at_depth.addClass("squished");
     //     console.log("squishing");
@@ -169,13 +169,13 @@ $(document).ready(function(){
   // //THREAD COLLAPSER
   // $("#wrapper2").bind("scroll", function(event){
   //   var winTop = $(window).scrollTop();
-  //   var target = $("#wrapper2 .hyp-detail");
+  //   var target = $("#wrapper2 .detail");
 
   //   target.each(function(){
   //     if ((winTop >= elTop) ) {
-  //       $(this).parents(".hyp-detail").eq(0).data("squish", "true");
+  //       $(this).parents(".detail").eq(0).data("squish", "true");
   //     } else {
-  //       $(this).parents(".hyp-detail").eq(0).data("squish", "false");
+  //       $(this).parents(".detail").eq(0).data("squish", "false");
   //     }
 
   //   });
@@ -196,16 +196,16 @@ $(document).ready(function(){
   // $("#wrapper2").bind("scroll", function(event){
   //   var counter = 0;
   //   console.log($(window).scrollTop());
-  //   $("#wrapper2 .hyp-detail").each(function(){
+  //   $("#wrapper2 .detail").each(function(){
 
   //     if ($(window).scrollTop() >= $(this).offset().top) {
-  //       $(this).parents(".hyp-detail").eq(0).addClass("collapsed");
+  //       $(this).parents(".detail").eq(0).addClass("collapsed");
   //       ++counter;
   //       console.log($(this).offset().top);
   //     }
 
   //     if ($(window).scrollTop() <= $(this).offset().top) {
-  //       $(this).parents(".hyp-detail").eq(0).removeClass("collapsed");
+  //       $(this).parents(".detail").eq(0).removeClass("collapsed");
   //     }
 
   //   });
