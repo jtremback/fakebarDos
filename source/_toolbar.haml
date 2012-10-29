@@ -1,0 +1,22 @@
+#toolbar.form-inline.shown
+  .tri
+  .pull-right
+    %form#persona.deform.deform{"accept-charset" => "utf-8", :action => "", :enctype => "multipart/form-data", :method => "POST"}
+      %fieldset
+        %input{:name => "_charset_", :type => "hidden"}
+          %input{:name => "__formid__", :type => "hidden", :value => "persona"}
+            %input#deformField1{:name => "csrf_token", :type => "hidden", :value => "f7bd039c8e8ba9dd5d6d7653e84ac487bea413b7"}
+              #item-deformField2.control-group{:title => ""}
+                %label.control-label{:for => "deformField2"}
+                  Id
+                .controls
+                  #deformField2.tinyman.dropdown{:name => "id"}
+                    %input{:name => "id", :type => "hidden", :value => "-1"}
+                      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+                        woah2&nbsp;
+                        %span.provider /localhost:5000
+                      %ul.dropdown-menu.pull-right{:role => "menu"}
+                        %li
+                          %a{"data-value" => "0", :href => "#"} woah2&nbsp;/localhost:5000
+                        %li
+                          %a{"data-value" => "-1", :href => "#", :name => "logout"} Sign out
