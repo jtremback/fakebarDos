@@ -1,0 +1,135 @@
+@import "compass";
+@import "compass/css3";
+@import "compass/css3/images";
+@import "compass/utilities/color";
+
+@import "reset";
+@import "base";
+@import "common";
+
+@import "home";
+
+$font-size: 17;
+$em: $font-size / 1em;
+
+article {
+  padding: 1em;
+}
+
+html {
+  font-size: $font-size / 16 * 1em;
+}
+
+body {
+  font-family: "Merriweather", "Georgia", serif;
+}
+
+section {
+  margin: 2em 0;
+}
+
+ol {
+  list-style-type: decimal;
+  margin: .5em 0;
+  li {
+    margin: .5em 0;
+  }
+}
+
+#toolbar {
+  font-size: .9em;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  & > div {
+    margin: .5em 0;
+    width: 100%;
+  }
+
+  .bookmarklet {
+    @extend .hyp-button;
+    border: 1px dashed $gray;
+  }
+}
+
+hgroup {
+  h1 {
+    margin-bottom: 0 !important;
+  }
+}
+
+/*
+    Mobile layout
+    240–479 px
+    Zoomed out below 320 px
+*/
+
+@media screen and (min-width: 15em) {
+  article { padding: 4em 2em; }
+
+  header {
+    margin: 0 -2em 2em;
+    text-align: center;
+  }
+
+  #auth {
+    input {
+      width: 100%;
+    }
+  }
+}
+
+/*
+    Wide mobile layout
+    480-767 px
+    Zoomed in above 480 px
+*/
+
+@media screen and (min-width: 30em) {
+  header {
+    @include pie-clearfix;
+    text-align: left;
+    img { float: left; }
+  }
+
+  section { margin: 4em 0em; }
+
+  #auth {
+    .controls, .control-group, .form-actions, fieldset, input {
+      width: auto;
+    }
+  }
+}
+
+/*
+    Tablet layout
+    600-911 px
+    Zoomed in above 600 px
+*/
+
+@media screen and (min-width: 37.5em) {
+  article { padding: 6em; }
+}
+
+/*
+    Widescreen layout
+    912-1887 px
+    Zoomed in above 912 px
+*/
+
+@media screen and (min-width: 57em) {
+  article {
+    width: grid(12);
+    margin: auto;
+  }
+}
+
+/*
+    Huge-screen layout
+    1888-2520 px
+    Zoomed in above 1920 px
+*/
+
+@media screen and (min-width: 118em) {
+}

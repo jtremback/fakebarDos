@@ -1,0 +1,13 @@
+%script{:id => "detail-template.html", :type => "text/ng-template"}
+  %li.hyp-paper.hyp-excerpt
+    %blockquote {{annotation.excerpt}}
+  %li.hyp-annotation.hyp-paper.hyp-detail.collapsed
+    .margin-counter
+    <div class="hyp-score {{reply.stance}}">{{reply.score}}</div>
+    .topbar
+      .hyp-user {{annotation.username}}
+      .hyp-time {{annotation.time}}
+    .hyp-content {{annotation.text}}
+    %ul.annotator-listing
+      %li.hyp-annotation.hyp-detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}
+    
