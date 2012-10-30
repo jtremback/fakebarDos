@@ -1,14 +1,15 @@
 %script{:id => "replies-template.html", :type => "text/ng-template"} 
   %a.threadexp{:href => "#collapse"}
   .time {{reply.time}}
-  .user {{reply.username}}
   .annotator-controls
-    %a.write{:href => "#reply"} Reply
+    %a.write Reply
+  .user {{reply.username}}
   .body {{reply.text}}
   .bottombar
     %span.replycount {{reply.count}}
   .thread
     %ul.annotator-listing
+      = partial "writer.haml"
       %li.annotation.detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in reply.children"}
   
 

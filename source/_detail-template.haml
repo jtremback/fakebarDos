@@ -4,12 +4,13 @@
   %li.annotation.paper.detail
     %a.threadexp{:href => "#collapse"}
     .time {{annotation.time}}
-    .user {{annotation.username}}
     .annotator-controls
-      %a.write{:href => "#reply"} Reply
+      %a.write Reply
+    .user {{annotation.username}}
     .body {{annotation.text}}
     .bottombar
       %span.replycount {{annotation.count}}
     .thread
       %ul.annotator-listing
+        = partial "writer.haml"
         %li.annotation.detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}

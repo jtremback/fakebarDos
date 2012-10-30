@@ -1,13 +1,3 @@
-$.belowthefold = function(element, settings) {
-    var fold = $(window).height() + $(window).scrollTop();
-    return fold <= $(element).offset().top;
-};
-
-$.abovethetop = function(element, settings) {
-    var top = $(window).scrollTop();
-    return top >= $(element).offset().top + $(element).height();
-};
-
 $(document).ready(function(){
 
   $(".summary").click(function(event){
@@ -36,6 +26,27 @@ $(document).ready(function(){
 
   $("#wrapper2").click(function(event) {
     event.stopPropagation();
+  });
+
+//HOVERER
+  $(".detail").mouseover(function(event){
+    $(this).addClass("hover");
+    event.stopPropagation();
+  });
+
+  $(".detail").mouseout(function(event){
+    $(this).removeClass("hover");
+    event.stopPropagation();
+  });
+
+//WRITER
+  $(".writer").hide();
+  $(".write").click(function(){
+    $(this).parent().parent().find(".writer").eq(0).show();
+  });
+
+  $(".writer .annotator-cancel").click(function(){
+    $(this).parents(".writer").hide()
   });
 
 //FLIPPER
@@ -94,129 +105,3 @@ $(document).ready(function(){
   });
 
 });
-
-// groups contain collections of all details on a certain level
-
-
-// groups = []
-// nodes = paper.children(annotator-listing).children(detail)
-// while nodes.children(annotator-listing).children(detail).length
-//   groups.push(nodes)
-//   nodes = nodes.children(annotator-listing).children(detail)
-
-// onscroll
-//   i = 0 
-//   while groups[i].each(data offscreen)
-//     groups[i].addClass("squished")
-//     i++
-
-//   while i <  groups.length
-//     groups[i].removeClass("squished")
-//     i++
-
-
-
-
-
-  // //THREAD COLLAPSER
-  // //If no annotation bodies at a certain level are on screen, squish the level.
-  // var scroller = $("#wrapper2");
-  // var nothread = scroller.find(".nothread");
-  // var detail = scroller.find(".detail")
-
-  // //set data about the depth of each .detail
-  // detail.each(function(){
-  //   var depth = $(this).parentsUntil($(".paper"), ".detail").length;
-  //   $(this).data("depth", depth);
-  //   console.log(depth);
-  // });
- 
-  // //do this every scroll event 
-  // scroller.bind("scroll", function(event){
-  //   var win_top = 0
-  //   var scroller_top = scroller.scrollTop();
-  //   var targ_top = nothread.offset().top;
-
-
-  //   //set data about whether each .nothread is on or off screen
-  //   nothread.each(function(){
-  //     if ($(this).offset().top < win_top){
-  //       $(this).data("offscreen", "true");
-  //       console.log("offscreening");
-  //     } else {
-  //       $(this).data("offscreen", "false");
-  //       console.log("onscreening");
-  //     }
-  //   });
-
-  //   //if all nothreads in each detail are offscreen, and all nothreads in every detail with the same
-  //   //level are offscreen, collapse all details with that level.
-  //   detail.each(function(){
-  //     if ($(this).children(".nothread").data )
-  //   });
-
-    // target.each(function(){
-    //   var depth = target.parentsUntil($(".detail"), ".paper").length;
-    //   var all_at_depth = target.filter(function(){ $(this).parentsUntil($(".detail"), ".paper").length == depth; });
-    //   if ($(this).data("offscreen") === "true"){
-    //     all_at_depth.addClass("squished");
-    //     console.log("squishing");
-    //   }
-    // });
-
-  // });
-
-  // //THREAD COLLAPSER
-  // $("#wrapper2").bind("scroll", function(event){
-  //   var winTop = $(window).scrollTop();
-  //   var target = $("#wrapper2 .detail");
-
-  //   target.each(function(){
-  //     if ((winTop >= elTop) ) {
-  //       $(this).parents(".detail").eq(0).data("squish", "true");
-  //     } else {
-  //       $(this).parents(".detail").eq(0).data("squish", "false");
-  //     }
-
-  //   });
-
-  //   target.each(function(){
-  //     if ($(this).data("squish") === "true") {
-  //       $(this).addClass("squished");
-  //       console.log("squishing")
-  //     } else {
-  //       $(this).removeClass("squished");
-  //     }
-  //   });
-
-  // });
-
-
-  //   //THREAD COLLAPSER
-  // $("#wrapper2").bind("scroll", function(event){
-  //   var counter = 0;
-  //   console.log($(window).scrollTop());
-  //   $("#wrapper2 .detail").each(function(){
-
-  //     if ($(window).scrollTop() >= $(this).offset().top) {
-  //       $(this).parents(".detail").eq(0).addClass("collapsed");
-  //       ++counter;
-  //       console.log($(this).offset().top);
-  //     }
-
-  //     if ($(window).scrollTop() <= $(this).offset().top) {
-  //       $(this).parents(".detail").eq(0).removeClass("collapsed");
-  //     }
-
-  //   });
-
-  //   counter = counter - 1;
-
-  //   if (counter <= 0) {
-  //     $(".margin-counter").hide();
-  //   } else {
-  //     $(".margin-counter").show().html("+" + (counter));
-  //   }
-  // });
-
-
