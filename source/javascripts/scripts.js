@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  $('.dropdown-toggle').dropdown()
+
   $(".summary").click(function(event){
     $("#wrapper2").addClass("out");
     $("#wrapper1").addClass("compressed");

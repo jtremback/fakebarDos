@@ -1,8 +1,10 @@
 %script{:id => "replies-template.html", :type => "text/ng-template"} 
   %a.threadexp{:href => "#collapse"}
-  .time {{reply.time}}
+  .upper-right {{reply.time}}
   .annotator-controls
     %a.write Reply
+    %a.fave Save
+    %a.flag Flag
   .user {{reply.username}}
   .body {{reply.text}}
   .bottombar

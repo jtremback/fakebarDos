@@ -174,6 +174,9 @@ label {
 .annotator-controls {
   @include box-shadow(-1em 0 1em 0 #fff);
   background: #fff;
+  & a {
+    margin-left: .5em;
+  }
 }
 
 a {
@@ -191,6 +194,11 @@ a {
   &.flag {
     @include linkbutton;
     background-image: url("../images/flag_1.png");
+  }
+
+  &.dropdown-toggle {
+    @include linkbutton_right;
+    background-image: url("../images/dropdown_1.png");
   }
 
   &.annotator-save {
@@ -262,9 +270,15 @@ blockquote {
   }
 }
 
+.dropdown-toggle {
+  &:active {
+    outline: 0;
+  }
+}
+
 .dropdown-menu {
   @include rotateX(90deg);
-  @include smallshadow;
+  // @include smallshadow;
   background: $white;
   border: solid 1px $grayLighter;
   border-top: 0;
@@ -377,7 +391,7 @@ blockquote {
     margin-bottom: .25em;
   }
 
-  .time {
+  .upper-right {
     float: right;
     display: inline-block;
     line-height: 2em;
