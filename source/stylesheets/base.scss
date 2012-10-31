@@ -190,14 +190,26 @@ $em: 14 / 1em !default;
     opacity: 1;
   }
   @if $iconside == left {
-    padding-left: 1.3em;
+    padding-left: .8em;
     padding-right: 0;
     background-position: left center;
+  &:before {
+    content: "|";
+    color: transparent;
+    display: inline;
+    position: static;
+  }
   }
   @if $iconside == right {
     background-position: right center;
     padding-left: 0;
-    padding-right: 1.3em;
+    padding-right: .8em;
+  &:after {
+    content: "|";
+    color: transparent;
+    display: inline;
+    position: static;
+  }
   }
 }
 
@@ -228,7 +240,7 @@ $em: 14 / 1em !default;
   }
   &:hover {
     ul {
-      display: block;
+      display: inline;
     }
   }
   @if $menuside == left {
