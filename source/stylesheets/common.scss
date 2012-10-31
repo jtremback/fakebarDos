@@ -174,9 +174,9 @@ label {
 .annotator-controls {
   @include box-shadow(-1em 0 1em 0 #fff);
   background: #fff;
-  & a {
-    margin-left: .5em;
-  }
+  // & > * {
+  //   margin-left: .5em;
+  // }
 }
 
 a {
@@ -184,6 +184,17 @@ a {
   &.write {
     @include linkbutton;
     background-image: url("../images/pen_1.png");
+    position: relative;
+    &:hover {
+      &:before {
+        content: "reply";
+        position: absolute;
+        bottom: -1em;
+        right: 0;
+        text-align: right;
+        background: white;
+      }
+    }
   }
 
   &.fave {
@@ -194,6 +205,11 @@ a {
   &.flag {
     @include linkbutton;
     background-image: url("../images/flag_1.png");
+  }
+
+  &.share {
+    @include linkbutton;
+    background-image: url("../images/share_3.png");
   }
 
   &.dropdown-toggle {
@@ -213,6 +229,139 @@ a {
 }
 
 
+//Works but needs some sort of text in there.
+.flag1 {
+  @include linkbutton;
+  background-image: url("../images/flag_1.png");
+  position: relative;
+  display: inline;
+  border: 1px solid black;
+  ul {
+    border: 1px solid black;
+    white-space: nowrap;
+    position: absolute;
+    top: 1.2em;
+    right: 0;
+    text-align: right;
+    background: white;
+    display: none;
+  }
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+}
+
+//Adjusts for space
+.flag1b {
+  @include linkbutton;
+  background-image: url("../images/flag_1.png");
+  position: relative;
+  display: inline;
+  border: 1px solid black;
+  span {
+    font-family: mono;
+    color: transparent;
+    margin-right: -1em;
+  }
+  ul {
+    border: 1px solid black;
+    white-space: nowrap;
+    position: absolute;
+    top: 1.2em;
+    right: 0;
+    text-align: right;
+    background: white;
+    display: none;
+  }
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+}
+
+//Puts space in there
+.flag1a {
+  @include linkbutton;
+  background-image: url("../images/flag_1.png");
+  position: relative;
+  display: inline-block;
+  border: 1px solid black;
+  &:after {
+    content: " "
+  }
+  ul {
+    border: 1px solid black;
+    white-space: nowrap;
+    position: absolute;
+    top: 1.2em;
+    right: 0;
+    text-align: right;
+    background: white;
+    display: none;
+  }
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+}
+
+//Works with image in html
+.flag2 {
+  position: relative;
+  display: inline;
+  border: 1px solid black;
+  width: 1em;
+  height: 1em;
+  img {
+    vertical-align: text-top;
+    width: 1em;
+    height: 1em;
+  }
+  ul {
+    border: 1px solid black;
+    white-space: nowrap;
+    position: absolute;
+    top: 1.2em;
+    right: 0;
+    text-align: right;
+    background: white;
+    display: none;
+  }
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+}
+
+//Works as div with no text
+.flag3 {
+  @include icon("flag_1.png");
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  border: 1px solid black;
+  ul {
+    border: 1px solid black;
+    white-space: nowrap;
+    position: absolute;
+    top: 1.2em;
+    right: 0;
+    text-align: right;
+    background: white;
+    display: none;
+  }
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+}
 
 //EXCERPT////////////////////////////////
 .excerpt {

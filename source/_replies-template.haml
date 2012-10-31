@@ -2,9 +2,37 @@
   %a.threadexp{:href => "#collapse"}
   .upper-right {{reply.time}}
   .annotator-controls
-    %a.write Reply
-    %a.fave Save
-    %a.flag Flag
+    %a.write 
+    .flag1
+      Hello
+      %ul
+        %li flag1
+        %li Spam
+        %li General Idiocy
+    .flag1
+      &nbsp;
+      %ul
+        %li flag1
+        %li Spam
+        %li General Idiocy
+    .flag1b
+      %span &#8212;
+      %ul
+        %li flag1b
+        %li Spam
+        %li General Idiocy
+    .flag2
+      %img(src="../images/fave_1.png")
+      Text
+      %ul
+        %li flag2
+        %li Spam
+        %li General Idiocy
+    .flag3
+      %ul
+        %li flag3
+        %li Spam
+        %li General Idiocy
   .user {{reply.username}}
   .body {{reply.text}}
   .bottombar
