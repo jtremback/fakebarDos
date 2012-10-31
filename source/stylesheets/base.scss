@@ -178,24 +178,70 @@ $em: 14 / 1em !default;
   font-size: .8em;
 }
 
-//LINKBUTTONS
-@mixin linkbutton {
+//LINKBUTTON
+@mixin linkbutton($iconside: left) {
   text-decoration: none;
   cursor: pointer;
-  padding-left: 1.3em;
   background-size: 1em 1em;
   background-repeat: no-repeat;
-  background-position: left center;
   color: black;
   opacity: .6;
   &:hover {
     opacity: 1;
   }
+  @if $iconside == left {
+    padding-left: 1.3em;
+    padding-right: 0;
+    background-position: left center;
+  }
+  @if $iconside == right {
+    background-position: right center;
+    padding-left: 0;
+    padding-right: 1.3em;
+  }
 }
 
-@mixin linkbutton_right {
-  @include linkbutton;
-  background-position: right;
-  padding-left: 0;
-  padding-right: 1.3em;
+//DROPTIP
+@mixin droptip($iconside, $menuside, $imagepath) {
+  @include linkbutton($iconside);
+  background-image: url("#{$imagepath}");
+  position: relative;
+  display: inline-block;
+  min-height: 1em;
+  min-width: 1em;
+  ul {
+    border: 1px dotted $grayLight;
+    border-top: none;
+    white-space: nowrap;
+    position: absolute;
+    top: 1.2em;
+    background: white;
+    display: none;
+    padding: 0 .25em;
+  }
+  li {
+    line-height: 1.5;
+    opacity: .6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+  @if $menuside == left {
+    ul {
+      left: 0;
+      text-align: left;
+    }
+  }
+  @if $menuside == right {
+    ul {
+      right: 0;
+      text-align: right;
+    }
+  }
 }
+
