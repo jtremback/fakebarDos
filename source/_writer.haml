@@ -1,0 +1,17 @@
+%li.annotation.writer
+  .annotator-editor
+    %form.annotator-widget
+      .upper-right.dropdown
+        %a.visibility.dropdown-toggle(data-toggle="dropdown" href="#") Public
+        %ul.dropdown-menu.pull-right(role="menu")
+          %li 
+            %a Public
+          %li 
+            %a Private
+      .user woah2
+      %textarea.body{:placeholder => "Add your thoughts…"}
+      .bottombar
+        %button.btn
+          %a.annotator-save{:href => "#save"} Save
+        %span
+          %a.annotator-cancel{:href => "#cancel"} Cancel
