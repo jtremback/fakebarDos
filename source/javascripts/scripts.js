@@ -53,7 +53,7 @@ $(document).ready(function(){
 
 //SHOWURL
   $(".showurl").click(function(){
-    $(this).html('<input type="text" value="https://hypothes.is/h/a/9eje9ejedoido">').select();
+    $(this).html('https://hypothes.is/h/a/9eje9ejedoido').select();
   })
 
 //FLIPPER
