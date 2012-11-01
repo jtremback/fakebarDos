@@ -198,6 +198,7 @@ $em: 14 / 1em !default;
     color: transparent;
     display: inline;
     position: static;
+    font-family: $monoFontFamily;
   }
   }
   @if $iconside == right {
@@ -209,6 +210,7 @@ $em: 14 / 1em !default;
     color: transparent;
     display: inline;
     position: static;
+    font-family: $monoFontFamily;
   }
   }
 }
@@ -218,7 +220,7 @@ $em: 14 / 1em !default;
   @include linkbutton($iconside);
   background-image: url("#{$imagepath}");
   position: relative;
-  display: inline-block;
+  display: inline;
   min-height: 1em;
   min-width: 1em;
   ul {

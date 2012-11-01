@@ -41,15 +41,20 @@ $(document).ready(function(){
     event.stopPropagation();
   });
 
-//WRITER
+//REPLIER
   $(".writer").hide();
-  $(".write").click(function(){
+  $(".reply").click(function(){
     $(this).parent().parent().find(".writer").eq(0).show();
   });
 
   $(".writer .annotator-cancel").click(function(){
     $(this).parents(".writer").hide()
   });
+
+//SHOWURL
+  $(".showurl").click(function(){
+    $(this).html('<input type="text" value="https://hypothes.is/h/a/9eje9ejedoido">').select();
+  })
 
 //FLIPPER
   $(".heatmap-pointer.side").click(function(event){
