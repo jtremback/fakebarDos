@@ -1,0 +1,25 @@
+.flag-dialog
+  / .upper-left Share Annotation:
+  %fieldset
+    %input(type="checkbox")
+    %span Selection error
+    %br
+
+    %input(type="checkbox")
+    %span Spam
+    %br
+
+    %input(type="checkbox") 
+    %span Abusive language
+    %br
+
+    %input(type="checkbox")
+    %span Trolling
+    %br
+
+  %textarea.body(placeholder="Please provide some details on why you flagged this post.")
+  .buttonbar
+    %button.btn
+      .annotator-save.check-icon{:href => "#save"} Save
+    %span
+      .annotator-cancel.x-icon{:href => "#cancel"} Cancel

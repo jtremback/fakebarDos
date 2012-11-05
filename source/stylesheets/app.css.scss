@@ -19,9 +19,12 @@ body {
   outline: 1px solid black;
 }
 
-input { width: 100%; }
+input:not([type="checkbox"]) { width: 100%; }
 svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 
+input[type="checkbox"] {
+  vertical-align: middle;
+}
 
 
 //HIDDEN TABS////////////////////////////////
@@ -258,8 +261,6 @@ svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
   }
 
   .dropdown-toggle {
-    @include linkbutton(right);
-    background-image: url("../images/dropdown_1.png");
     .provider {
       color: $grayLight;
       display: none;

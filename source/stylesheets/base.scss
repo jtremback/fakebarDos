@@ -1,6 +1,16 @@
 @import 'compass/css3';
 @import url(http://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro:400,600|PT+Serif);
 
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot');
+  src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.svg#icomoon') format('svg'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 $white: #fff !default;
 $black: #000 !default;
@@ -118,7 +128,7 @@ $em: 14 / 1em !default;
       linear-gradient(top, #fefefe 0%, #f4f4f4 50%, #e2e2e2 51%, #fdfdfd 100%));
     border-color: $grayLight $grayLight $gray;
     color: black;
-    & > a {
+    & > * {
       opacity: 1;
     }
   }
@@ -179,13 +189,15 @@ $em: 14 / 1em !default;
 }
 
 //LINKBUTTON
-@mixin linkbutton($iconside: left) {
+@mixin linkbutton($imagepath: "../images/delete_1.png", $iconside: left) {
+  background-image: url("#{$imagepath}");
   text-decoration: none;
   cursor: pointer;
   background-size: 1em 1em;
   background-repeat: no-repeat;
   color: black;
   opacity: .6;
+  display: inline;
   &:hover {
     opacity: 1;
   }
@@ -193,32 +205,31 @@ $em: 14 / 1em !default;
     padding-left: .8em;
     padding-right: 0;
     background-position: left center;
-  &:before {
-    content: "|";
-    color: transparent;
-    display: inline;
-    position: static;
-    font-family: $monoFontFamily;
-  }
+    &:before {
+      content: "|";
+      color: transparent;
+      display: inline;
+      position: static;
+      font-family: $monoFontFamily;
+    }
   }
   @if $iconside == right {
     background-position: right center;
     padding-left: 0;
     padding-right: .8em;
-  &:after {
-    content: "|";
-    color: transparent;
-    display: inline;
-    position: static;
-    font-family: $monoFontFamily;
-  }
+    &:after {
+      content: "|";
+      color: transparent;
+      display: inline;
+      position: static;
+      font-family: $monoFontFamily;
+    }
   }
 }
 
 //DROPTIP
 @mixin droptip($iconside, $menuside, $imagepath) {
-  @include linkbutton($iconside);
-  background-image: url("#{$imagepath}");
+  @include linkbutton($imagepath, $iconside);
   position: relative;
   display: inline;
   min-height: 1em;
@@ -259,3 +270,39 @@ $em: 14 / 1em !default;
   }
 }
 
+
+@mixin fonticon($char, $iconside: left) {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  opacity: .5;
+  display: inline;
+  &:hover {
+    color: black;
+    opacity: 1;
+  }
+  @if $iconside == left {
+    &:before {
+      content: $char;
+      margin-right: .3em;
+      vertical-align: -.1em;
+      font-family: 'icomoon';
+      font-style: normal;
+      speak: none;
+      font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+  @if $iconside == right {
+    &:after {
+      content: $char;
+      margin-left: .5em;
+      vertical-align: -.1em;
+      font-family: 'icomoon';
+      font-style: normal;
+      speak: none;
+      font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+}

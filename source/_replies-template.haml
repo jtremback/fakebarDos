@@ -1,33 +1,23 @@
-%script{:id => "replies-template.html", :type => "text/ng-template"} 
+%script{:id => "replies-template.html", :type => "text/ng-template"}
   %a.threadexp{:href => "#collapse"}
-  .upper-right {{reply.time}}
-  .annotator-controls
-    .reply
-      %ul
-        %li Reply
-    .fave
-      %ul
-        %li Favorite
-    .share
-      %ul
-        %li Facebook
-        %li Twitter
-        %li Google +
-        %li.showurl Show URL
-    .flag
-      %ul
-        %li Bad anchor
-        %li Spam
-        %li General idiocy
+  .annotation
+    .upper-right {{reply.time}}
+    .magicontrols
+      %a.reply-icon(title="Reply")
+      %a.fave-icon(title="Favorite")
+      %a.share-icon(title="Share")
+      %a.flag-icon(title="Flag")
 
-  .user {{reply.username}}
-  .body {{reply.text}}
-  .bottombar
+    %a.upper-left {{reply.username}}
+    = partial "share-dialog.haml"
+    = partial "flag-dialog.haml"
+    .body {{reply.text}}
     %span.replycount {{reply.count}}
+
   .thread
     %ul.annotator-listing
       = partial "writer.haml"
-      %li.annotation.detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in reply.children"}
+      %li.detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in reply.children"}
   
 
 

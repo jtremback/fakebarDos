@@ -1,18 +1,22 @@
 %script{:id => "detail-template.html", :type => "text/ng-template"}
+
   %li.paper.excerpt
     %blockquote {{annotation.excerpt}}
-  %li.annotation.paper.detail
-    %a.threadexp{:href => "#collapse"}
-    .upper-right {{annotation.time}}
-    .annotator-controls
-      %a.write Reply
-      %a.fave Save
-      %a.flag Flag
-    .user {{annotation.username}}
-    .body {{annotation.text}}
-    .bottombar
-      %span.replycount {{annotation.count}}
+  %li.paper.detail
+    .annotation
+      %a.threadexp{:href => "#collapse"}
+      .upper-right {{annotation.time}}
+      .magicontrols
+        %a.reply-icon(title="Reply")
+        %a.fave-icon(title="Favorite")
+        %a.share-icon(title="Share")
+        %a.flag-icon(title="Flag")
+      %a.upper-left {{annotation.username}}
+      .body {{annotation.text}}
+      .bottombar
+        %span.replycount {{annotation.count}}
+
     .thread
       %ul.annotator-listing
         = partial "writer.haml"
-        %li.annotation.detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}
+        %li.detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}

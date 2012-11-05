@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
   $('.dropdown-toggle').dropdown()
+  $('.magicontrols *').tooltip({placement: 'bottom', delay: { show: 500, hide: 100 }, fade: true})
 
   $(".summary").click(function(event){
     $("#wrapper2").addClass("out");
@@ -43,12 +44,39 @@ $(document).ready(function(){
 
 //REPLIER
   $(".writer").hide();
-  $(".reply").click(function(){
-    $(this).parent().parent().find(".writer").eq(0).show();
+  $(".reply-icon").click(function(){
+    $(this).parent().parent().parent().find(".writer").eq(0).show();
   });
 
   $(".writer .annotator-cancel").click(function(){
     $(this).parents(".writer").hide()
+  });
+
+//FLAGGER
+  $(".flag-dialog").hide();
+  $(".flag-icon").click(function(){
+    $(this).parent().parent().find(".flag-dialog").eq(0).show();
+  });
+
+  $(".flag-dialog .annotator-cancel").click(function(){
+    $(this).parents(".flag-dialog").hide()
+  });
+
+//SHARER
+  $(".share-dialog").hide();
+  $(".share-icon").click(function(){
+    var dialog = $(this).parent().parent().find(".share-dialog").eq(0);
+    dialog.toggle();
+    dialog.find("input").select();
+  });
+
+  $(".share-dialog .annotator-save").click(function(){
+    $(this).parents(".share-dialog").hide()
+  });
+
+//FAVER
+  $(".fave-icon").click(function(){
+    $(this).toggleClass("checked");
   });
 
 //SHOWURL
