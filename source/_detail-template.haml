@@ -12,6 +12,8 @@
         %a.share-icon(title="Share")
         %a.flag-icon(title="Flag")
       %a.upper-left {{annotation.username}}
+      = partial "share-dialog.haml"
+      = partial "flag-dialog.haml"
       .body {{annotation.text}}
       .bottombar
         %span.replycount {{annotation.count}}

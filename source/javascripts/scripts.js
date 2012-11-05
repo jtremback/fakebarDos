@@ -45,33 +45,29 @@ $(document).ready(function(){
 //REPLIER
   $(".writer").hide();
   $(".reply-icon").click(function(){
-    $(this).parent().parent().parent().find(".writer").eq(0).show();
+    $(this).parent().parent().parent().find(".writer").eq(0).slideToggle();
   });
 
   $(".writer .annotator-cancel").click(function(){
-    $(this).parents(".writer").hide()
+    $(this).parents(".writer").slideUp()
   });
 
 //FLAGGER
   $(".flag-dialog").hide();
   $(".flag-icon").click(function(){
-    $(this).parent().parent().find(".flag-dialog").eq(0).show();
+    $(this).parent().parent().find(".flag-dialog").eq(0).slideToggle();
   });
 
   $(".flag-dialog .annotator-cancel").click(function(){
-    $(this).parents(".flag-dialog").hide()
+    $(this).parents(".flag-dialog").slideUp()
   });
 
 //SHARER
   $(".share-dialog").hide();
   $(".share-icon").click(function(){
     var dialog = $(this).parent().parent().find(".share-dialog").eq(0);
-    dialog.toggle();
+    dialog.slideToggle("fast");
     dialog.find("input").select();
-  });
-
-  $(".share-dialog .annotator-save").click(function(){
-    $(this).parents(".share-dialog").hide()
   });
 
 //FAVER
