@@ -1,14 +1,22 @@
 %li.annotation.writer
   .annotator-editor
     %form.annotator-widget
-      .upper-right.dropdown
-        %a.visibility.dropdown-toggle(data-toggle="dropdown" href="#") Public
-        %ul.dropdown-menu.pull-right(role="menu")
-          %li 
-            %a Public
-          %li 
+      .upper-right.dropdown.visibility
+        .dropdown-toggle.unlocked(data-toggle="dropdown" href="#" title="Visibility") Public
+        %ul.dropdown-menu.pull-right(role="menu") 
+          %li.vis-private
             %a Private
-      .upper-left woah2
+          %li.vis-public 
+            %a Public
+          %li.vis-group 
+            %a EFF Brigade
+          %li.vis-group
+            %a lollerskatez intl.
+          %li.vis-group
+            %a.group Ministry of Truth
+      %a.upper-left 
+        woah2
+      .lock-icon.inline-block
       %textarea.body{:placeholder => "Add your thoughts…"}
       .buttonbar
         %button.btn

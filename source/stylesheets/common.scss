@@ -2,6 +2,7 @@
 //TODO: One bottombar class to rule them all.
 //TODO: Possibly free styles from out of .annotation
 //TODO: Make a checked style for use across different types of buttons- icon font
+//TODO: Use color for lightening icons instead of opacity
 @import "reset";
 @import 'base';
 
@@ -104,6 +105,19 @@ label {
   span.errorMsg { @extend .visuallyhidden; }
 }
 
+.inline-block {
+  display: inline-block
+}
+
+.icon-hidden {
+  &:before {
+    color: transparent;
+  }
+  &:after {
+    color: transparent;
+  }
+}
+
 //Candidate for cleanup
 .btn-link {
   @include box-shadow(none);
@@ -184,37 +198,42 @@ label {
 
 //ICON CLASSES////////////////////////////////
 .flag-icon {
-  @include fonticon("\2d", left);
+  @include fonticon("\28", left);
 }
 
 .fave-icon {
-  @include fonticon("\33", left);
+  @include fonticon("\2b", left);
   &.checked:before {
-    content: "\34";
+    content: "\2c";
   }
 }
 
 .reply-icon {
-  @include fonticon("\2c", left);
+  @include fonticon("\27", left);
 }
 
 .share-icon {
-  @include fonticon("\31", left);
+  @include fonticon("\2a", left);
 }
 
 .clipboard-icon {
-  @include fonticon("\2b", left);
+  @include fonticon("\33", left);
 }
 
 .check-icon {
-  @include fonticon("\30", left)
+  @include fonticon("\35", left);
 }
 
 .x-icon {
-  @include fonticon("\32", left)
+  @include fonticon("\36", left);
 }
 
-
+.lock-icon {
+  @include fonticon("\30", right);
+  &.unlocked:after {
+    content: "\31";
+  }
+}
 
 //EXCERPT////////////////////////////////
 .excerpt {
@@ -273,7 +292,8 @@ blockquote {
 }
 
 .dropdown-toggle {
-  @include fonticon("\24", right);
+  @include fonticon("\2f", right);
+  background-color: white;
   &:active {
     outline: 0;
   }
@@ -284,7 +304,6 @@ blockquote {
   // @include smallshadow;
   background: $white;
   border: solid 1px $grayLighter;
-  border-top: 0;
   left: 0;
   float: left;
   opacity: 0;
@@ -292,14 +311,38 @@ blockquote {
   position: absolute;
 
   li {
-    line-height: 1.5;
-    margin: .25em .5em;
-    border-top: dotted 1px $grayLighter;
+    line-height: 1;
+    margin: .4em .5em 0;
+    padding-bottom: .1em;
+    border-bottom: dotted 1px $grayLighter;
+    white-space: nowrap;
+    cursor: pointer;
     &:hover {
       color: black;
     }
-    &:first-child {
-      border-top: 0;
+
+    &.selected {
+      color: black;
+      font-weight: 600;
+      line-height: 1;
+      &:before {
+        font-size: .7em;
+        
+      }
+    }
+    &.inactive {
+      font-weight: 400;
+      color: $grayLighter;
+      cursor: default;
+      &:hover {
+        color: $grayLighter;
+      }
+      & * {
+        cursor: default;
+      }
+    }
+    &:last-child {
+      border-bottom: 0;
     }
   }
 
@@ -324,6 +367,27 @@ blockquote {
   }
 }
 
+
+
+//VISIBILITY
+.visibility {
+  li {
+    @include fonticon("\35", right);
+    &:after {
+      opacity: 0;
+    }
+    &.selected {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+  .vis-public {
+    border-bottom: 1px solid $grayLighter;
+    margin: .4em 0 0;
+    padding: 0 .5em 0;
+  }
+}
 
 
 //TABS////////////////////////////////
@@ -418,6 +482,7 @@ blockquote {
   @include pie-clearfix;
   & > * {
     margin-right: .5em;
+    display: inline-block;
   }
 }
 
@@ -528,6 +593,10 @@ blockquote {
   position: relative;
   padding-left: 1em;
 
+  .upper-right {
+    font-size: 1em;
+  }
+
   textarea {
     width: 100%;
     min-height: 8em;
@@ -539,7 +608,6 @@ blockquote {
     }
   }
 }
-
 
 
 //SHARE-DIALOG////////////////////////////////

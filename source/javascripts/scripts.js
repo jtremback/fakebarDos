@@ -2,6 +2,31 @@ $(document).ready(function(){
 
   $('.dropdown-toggle').dropdown()
   $('.magicontrols *').tooltip({placement: 'bottom', delay: { show: 500, hide: 100 }, fade: true})
+  $('.lock-icon').tooltip({placement: 'bottom', delay: { show: 500, hide: 100 }, fade: true})
+
+  $(".writer .lock-icon").addClass('icon-hidden');
+
+  $('.visibility li.vis-group').not('.inactive').click(function(){
+    $('.visibility li.vis-public').removeClass('selected');
+    $('.visibility li.vis-private').removeClass('selected');
+    $('.visibility .dropdown-toggle').text('Groups');
+    $(this).parent().parent().parent().find('.lock-icon').removeClass('icon-hidden').addClass('unlocked');
+    $(this).toggleClass('selected');
+  });
+
+  $('.visibility li.vis-public').not('.inactive').click(function(){
+    $('.visibility li').removeClass('selected');
+    $('.visibility .dropdown-toggle').text('Public');
+    $(this).parent().parent().parent().find('.lock-icon').addClass('icon-hidden');
+    $(this).toggleClass('selected');
+  });
+
+  $('.visibility li.vis-private').not('.inactive').click(function(){
+    $('.visibility li').removeClass('selected');
+    $('.visibility .dropdown-toggle').text('Private');
+    $(this).parent().parent().parent().find('.lock-icon').removeClass('icon-hidden').removeClass('unlocked');
+    $(this).toggleClass('selected');
+  });
 
   $(".summary").click(function(event){
     $("#wrapper2").addClass("out");
