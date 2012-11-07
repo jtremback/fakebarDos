@@ -1,0 +1,116 @@
+/*
+Syntax error: 1em*px isn't a valid CSS value.
+        on line 46 of /home/jehan/Desktop/hypothesis/fakebarDos/source/stylesheets/common.scss
+        from line 8 of /home/jehan/Desktop/hypothesis/fakebarDos/source/stylesheets/site.css.scss
+
+41:   position: absolute;
+42:   text-align: center;
+43:   width: 100%;
+44: 
+45:   & > div {
+46:     margin: .5em 0;
+47:     width: 100%;
+48:   }
+49: 
+50:   .bookmarklet {
+51:     @extend .button;
+
+Backtrace:
+/home/jehan/Desktop/hypothesis/fakebarDos/source/stylesheets/common.scss:46
+/home/jehan/Desktop/hypothesis/fakebarDos/source/stylesheets/site.css.scss:8
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/script/number.rb:266:in `to_s'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:295:in `visit_prop'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `map'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:316:in `visit_rule'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:224:in `block in visit_import'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:224:in `map'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:224:in `visit_import'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `map'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:126:in `visit_root'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/tree/root_node.rb:20:in `render'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/engine.rb:315:in `_render'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.1/lib/sass/engine.rb:262:in `render'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-sass-0.8.0/lib/sprockets/sass/sass_template.rb:40:in `evaluate'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-sprockets-3.0.0/lib/middleman-sprockets/sass.rb:45:in `evaluate'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/tilt-1.3.3/lib/tilt/template.rb:76:in `render'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/context.rb:197:in `block in evaluate'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/context.rb:194:in `each'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/context.rb:194:in `evaluate'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/processed_asset.rb:12:in `initialize'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/base.rb:350:in `new'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/base.rb:350:in `block in build_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/base.rb:371:in `circular_call_protection'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/base.rb:349:in `build_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/index.rb:93:in `block in build_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/caching.rb:51:in `cache_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/index.rb:92:in `build_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/base.rb:270:in `find_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/index.rb:60:in `find_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/bundled_asset.rb:16:in `initialize'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/base.rb:353:in `new'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/base.rb:353:in `build_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/index.rb:93:in `block in build_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/caching.rb:51:in `cache_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/index.rb:92:in `build_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/base.rb:270:in `find_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/index.rb:60:in `find_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/environment.rb:74:in `find_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-sprockets-3.0.0/lib/middleman-sprockets/extension.rb:100:in `find_asset'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/sprockets-2.4.5/lib/sprockets/server.rb:47:in `call'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/builder.rb:134:in `call'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/urlmap.rb:64:in `block in call'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/urlmap.rb:49:in `each'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/urlmap.rb:49:in `call'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/builder.rb:134:in `call'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/rack-test-0.6.1/lib/rack/mock_session.rb:30:in `request'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/rack-test-0.6.1/lib/rack/test.rb:219:in `process_request'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/rack-test-0.6.1/lib/rack/test.rb:57:in `get'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-core-3.0.0/lib/middleman-core/cli/build.rb:229:in `block in execute!'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-core-3.0.0/lib/middleman-core/cli/build.rb:226:in `each'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-core-3.0.0/lib/middleman-core/cli/build.rb:226:in `execute!'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-core-3.0.0/lib/middleman-core/cli/build.rb:168:in `invoke!'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/thor-0.15.4/lib/thor/actions.rb:95:in `action'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-core-3.0.0/lib/middleman-core/cli/build.rb:56:in `build'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/thor-0.15.4/lib/thor/task.rb:27:in `run'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/thor-0.15.4/lib/thor/invocation.rb:120:in `invoke_task'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/thor-0.15.4/lib/thor.rb:275:in `dispatch'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/thor-0.15.4/lib/thor/base.rb:425:in `start'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-core-3.0.0/lib/middleman-core/cli.rb:64:in `method_missing'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/thor-0.15.4/lib/thor/task.rb:29:in `run'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/thor-0.15.4/lib/thor/task.rb:126:in `run'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/thor-0.15.4/lib/thor/invocation.rb:120:in `invoke_task'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/thor-0.15.4/lib/thor.rb:275:in `dispatch'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/thor-0.15.4/lib/thor/base.rb:425:in `start'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-core-3.0.0/bin/middleman:67:in `block in <top (required)>'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-core-3.0.0/bin/middleman:66:in `chdir'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/gems/middleman-core-3.0.0/bin/middleman:66:in `<top (required)>'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/bin/middleman:19:in `load'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/bin/middleman:19:in `<main>'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `eval'
+/home/jehan/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: 1em*px isn't a valid CSS value.\A         on line 46 of /home/jehan/Desktop/hypothesis/fakebarDos/source/stylesheets/common.scss\A         from line 8 of /home/jehan/Desktop/hypothesis/fakebarDos/source/stylesheets/site.css.scss\A \A 41:   position: absolute;\A 42:   text-align: center;\A 43:   width: 100%;\A 44: \A 45:   & > div {\A 46:     margin: .5em 0;\A 47:     width: 100%;\A 48:   }\A 49: \A 50:   .bookmarklet {\A 51:     @extend .button;"; }
