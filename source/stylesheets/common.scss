@@ -209,15 +209,15 @@ label {
 }
 
 .reply-icon {
-  @include fonticon("\27", left);
+  @include fonticon("\e004", left);
 }
 
 .share-icon {
-  @include fonticon("\2a", left);
+  @include fonticon("\25", left);
 }
 
 .down-icon {
-  @include fonticon("\3c", left);
+  @include fonticon("\e007", left);
 }
 
 .clipboard-icon {

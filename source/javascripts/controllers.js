@@ -95,7 +95,7 @@ function DetailList($scope) {
       count: "15 replies",
       children: [
         {
-          username: "notouch",
+          username: "woah2",
           time: "about 1 day ago",
           stance: "pos",
           score: 16,
@@ -120,7 +120,7 @@ function DetailList($scope) {
               ]
             },
             {
-              username: 'G0VERNMENT',
+              username: 'woah2',
               time: 'about 22 hours ago',
               stance: "neg",
               score: 20,

@@ -47,7 +47,7 @@ function showEdit(that, type) {
     _save.text('Amend');
   } else if (type === "retract") {
     _body.slideUp();
-    _message.text("Retracting an annotation will cost you 5 Hypothesis Karma Gold Points. Please state the reason you are retracting the annotation.")
+    _message.text("Retracting an annotation may impact your reputation. Please state the reason you are retracting the annotation.")
     _textarea.attr("placeholder", "I'm retracting this annotation because...")
     _save.text('Retract');
   }

@@ -8,15 +8,18 @@
       %a.share-icon(title="Share" data-action="share-button")
       .dropdown(title="More Actions")
         %a.dropdown-toggle.down-icon(data-toggle="dropdown" href="#")
-        %ul.dropdown-menu.pull-right(role="menu") 
-          %li(data-action="edit")
+        %ul.dropdown-menu.pull-right(role="menu" ng-show="reply.username == 'woah2'") 
+          %li(data-action="edit" ng-hide="reply.count.length")
             %a Edit
-          %li(data-action="delete")
+          %li(data-action="delete" ng-hide="reply.count.length")
             %a Delete
-          %li(data-action="amend")
+          %li(data-action="amend" ng-show="reply.count.length")
             %a Amend
-          %li(data-action="retract")
+          %li(data-action="retract" ng-show="reply.count.length")
             %a Retract
+        %ul.dropdown-menu.pull-right(role="menu" ng-hide="reply.username == 'woah2'") 
+          %li(data-action="flag")
+            %a Flag
 
     %a.upper-left {{reply.username}}
     = partial "share-dialog.haml"
