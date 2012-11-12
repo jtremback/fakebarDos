@@ -1,16 +1,117 @@
+
+function init () {
+  $('[data-object*="dialog"]').hide();
+}
+
+
+function showReply() {  
+  $(this).parents('[data-object="detail"]').eq(0).find('[data-object="reply-dialog"]')
+  .eq(0).slideToggle();
+}
+
+function showFlag() {
+  $(this).parents('[data-object="detail"]').eq(0).find('[data-object="flag-dialog"]').eq(0)
+  .slideToggle();
+}
+
+function showShare() {
+  var el = $(this).parents('[data-object="detail"]').eq(0).find('[data-object="share-dialog"]').eq(0);
+  el.slideToggle("fast");
+  el.find("input").select();
+}
+
+function showEdit(that, type) {
+  var _annotation = that.parents('[data-object="annotation"]').eq(0);
+  var _dialog = _annotation.find('[data-object="edit-dialog"]').eq(0);
+  var _body = _annotation.find('[data-object="body"]');
+  var _bodytext = _body.text();
+  var _textarea = _dialog.find('textarea');
+  var _message = _dialog.find('[data-object="message"]')
+
+  var _save = _dialog.find('[data-action="save"]');
+  var _cancel = _dialog.find('[data-action="cancel"]');
+  console.log(that);
+
+  if (type === "edit") {
+    _body.slideUp();
+    _textarea.text(_bodytext);
+    _save.text('Edit'); 
+  } else if (type === "delete") {
+    _message.text("Are you sure you want to delete your annotation?")
+    _body.slideUp();
+    _textarea.hide();
+    _save.text('Delete');
+  } else if (type === "amend") {
+    _message.text("Amend your annotation to correct errors or add information.")
+    _textarea.attr("placeholder", "Amendment...")
+    _save.text('Amend');
+  } else if (type === "retract") {
+    _body.slideUp();
+    _message.text("Retracting an annotation will cost you 5 Hypothesis Karma Gold Points. Please state the reason you are retracting the annotation.")
+    _textarea.attr("placeholder", "I'm retracting this annotation because...")
+    _save.text('Retract');
+  }
+  _dialog.slideDown();
+}
+
+function showDelete() {
+  $(this).parents('[data-object="annotation"]').find('[data-object="delete-dialog"]').eq(0)
+  .slideToggle();
+}
+
+function hideDialog() {
+  $(this).parents('[data-object*="dialog"]')
+  .slideUp();
+  $(this).parents('[data-object="annotation"]').find('[data-object="body"]').slideDown();
+  console.log($(this).parents('[data-object*="dialog"]'));
+}
+
+
+function favoriteThis() {
+  $(this).toggleClass("checked");
+}
+
+
+
 $(document).ready(function(){
 
   $('.dropdown-toggle').dropdown()
-  $('.magicontrols *').tooltip({placement: 'bottom', delay: { show: 500, hide: 100 }, fade: true})
+  $('.magicontrols *').tooltip({placement: 'top', delay: { show: 200, hide: 200 }, fade: true})
   $('.lock-icon').tooltip({placement: 'bottom', delay: { show: 500, hide: 100 }, fade: true})
 
   $(".writer .lock-icon").addClass('icon-hidden');
 
-  $('.visibility li.vis-group').not('.inactive').click(function(){
-    $('.visibility li.vis-public').removeClass('selected');
-    $('.visibility li.vis-private').removeClass('selected');
+  init();
+
+  //EVENTS
+  $('[data-action="reply-button"]').on("click", showReply);
+  $('[data-action="share-button"]').on("click", showShare);
+  $('[data-action="favorite-button"]').on("click", favoriteThis);
+
+  $('[data-action="cancel"]').on("click", hideDialog);
+  $('[data-action="edit"]').click(function(){
+    showEdit($(this), "edit");
+  });
+  $('[data-action="delete"]').click(function(){
+    showEdit($(this), "delete");
+  });
+  $('[data-action="amend"]').click(function(){
+    showEdit($(this), "amend");
+  });
+  $('[data-action="retract"]').click(function(){
+    showEdit($(this), "retract");
+  });
+
+//VIS MENU
+  var VisGroup = '[data-action="vis-group"]';
+  var VisPublic = '[data-action="vis-public"]';
+  var VisPrivate = '[data-action="vis-private"]';
+
+  $(VisGroup).not('.inactive').click(function(){
+    $(VisPublic).removeClass('selected');
+    $(VisPrivate).removeClass('selected');
     $('.visibility .dropdown-toggle').text('Groups');
-    $(this).parent().parent().parent().find('.lock-icon').removeClass('icon-hidden').addClass('unlocked');
+    $(this).parents(Detail).find('.lock-icon').removeClass('icon-hidden').addClass('unlocked');
     $(this).toggleClass('selected');
   });
 
@@ -28,6 +129,9 @@ $(document).ready(function(){
     $(this).toggleClass('selected');
   });
 
+
+
+//VIEW SHOWING
   $(".summary").click(function(event){
     $("#wrapper2").addClass("out");
     $("#wrapper1").addClass("compressed");
@@ -56,60 +160,6 @@ $(document).ready(function(){
     event.stopPropagation();
   });
 
-//HOVERER
-  $(".detail").mouseover(function(event){
-    $(this).addClass("hover");
-    event.stopPropagation();
-  });
-
-  $(".detail").mouseout(function(event){
-    $(this).removeClass("hover");
-    event.stopPropagation();
-  });
-
-//REPLIER
-  $(".writer").hide();
-  $(".reply-icon").click(function(){
-    $(this).parent().parent().parent().find(".writer").eq(0).slideToggle();
-  });
-
-  $(".writer .annotator-cancel").click(function(){
-    $(this).parents(".writer").slideUp()
-  });
-
-//FLAGGER
-  $(".flag-dialog").hide();
-  $(".flag-icon").click(function(){
-    $(this).parent().parent().find(".flag-dialog").eq(0).slideToggle();
-  });
-
-  $(".flag-dialog .annotator-cancel").click(function(){
-    $(this).parents(".flag-dialog").slideUp()
-  });
-
-//SHARER
-  $(".share-dialog").hide();
-  $(".share-icon").click(function(){
-    var dialog = $(this).parent().parent().find(".share-dialog").eq(0);
-    dialog.slideToggle("fast");
-    dialog.find("input").select();
-  });
-
-//FAVER
-  $(".fave-icon").click(function(){
-    $(this).toggleClass("checked");
-  });
-
-//SHOWURL
-  $(".showurl").click(function(){
-    $(this).html('https://hypothes.is/h/a/9eje9ejedoido').select();
-  })
-
-//FLIPPER
-  $(".heatmap-pointer.side").click(function(event){
-    event.stopPropagation();
-    $(this).addClass("flip");
-  });
 
 
 //THREAD COLLAPSER

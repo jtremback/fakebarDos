@@ -21,4 +21,4 @@
     .thread
       %ul.annotator-listing
         = partial "writer.haml"
-        %li.detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}
+        %li.detail(ng-include="'replies-template.html'" ng-repeat="reply in annotation.children" data-object="detail")

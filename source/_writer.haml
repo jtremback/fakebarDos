@@ -1,19 +1,19 @@
-%li.annotation.writer
+%li.annotation.writer(data-object="writer-dialog")
   .annotator-editor
     %form.annotator-widget
       .upper-right.dropdown.visibility
         .dropdown-toggle.unlocked(data-toggle="dropdown" href="#" title="Visibility") Public
         %ul.dropdown-menu.pull-right(role="menu") 
-          %li.vis-private
+          %li(data-action="vis-private")
             %a Private
-          %li.vis-public 
+          %li.li-underline(data-action="vis-public")
             %a Public
-          %li.vis-group 
+          %li(data-action="vis-group")
             %a EFF Brigade
-          %li.vis-group
+          %li(data-action="vis-group")
             %a lollerskatez intl.
-          %li.vis-group
-            %a.group Ministry of Truth
+          %li(data-action="vis-group")
+            %a Ministry of Truth
       %a.upper-left 
         woah2
       .lock-icon.inline-block
@@ -22,4 +22,4 @@
         %button.btn
           .annotator-save.check-icon{:href => "#save"} Save
         %span
-          .annotator-cancel.x-icon{:href => "#cancel"} Cancel
+          .annotator-cancel.x-icon(data-action="cancel" href="#cancel") Cancel

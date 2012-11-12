@@ -1,23 +1,38 @@
-%script{:id => "replies-template.html", :type => "text/ng-template"}
-  %a.threadexp{:href => "#collapse"}
-  .annotation
+%script(id="replies-template.html" type="text/ng-template")
+  %a.threadexp(href="#collapse")
+  .annotation(data-object="annotation")
     .upper-right {{reply.time}}
     .magicontrols
-      %a.reply-icon(title="Reply")
-      %a.fave-icon(title="Favorite")
-      %a.share-icon(title="Share")
-      %a.flag-icon(title="Flag")
+      %a.reply-icon(title="Reply" data-action="reply-button")
+      %a.fave-icon(title="Favorite" data-action="favorite-button")
+      %a.share-icon(title="Share" data-action="share-button")
+      .dropdown(title="More Actions")
+        %a.dropdown-toggle.down-icon(data-toggle="dropdown" href="#")
+        %ul.dropdown-menu.pull-right(role="menu") 
+          %li(data-action="edit")
+            %a Edit
+          %li(data-action="delete")
+            %a Delete
+          %li(data-action="amend")
+            %a Amend
+          %li(data-action="retract")
+            %a Retract
 
     %a.upper-left {{reply.username}}
     = partial "share-dialog.haml"
     = partial "flag-dialog.haml"
-    .body {{reply.text}}
+    .body(data-object="body") {{reply.text}}
+    .dialog(data-object="edit-dialog")
+      %textarea.body
+      .message(data-object="message")
+      .buttonbar
+        %button.btn
+          .annotator-save.check-icon(data-action="save") Save
+        %span
+          .annotator-cancel.x-icon(data-action="cancel") Cancel
     %span.replycount {{reply.count}}
 
   .thread
     %ul.annotator-listing
       = partial "writer.haml"
-      %li.detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in reply.children"}
-  
-
-
+      %li.detail(ng-include="'replies-template.html'" ng-repeat="reply in reply.children" data-object="detail")

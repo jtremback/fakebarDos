@@ -216,6 +216,10 @@ label {
   @include fonticon("\2a", left);
 }
 
+.down-icon {
+  @include fonticon("\3c", left);
+}
+
 .clipboard-icon {
   @include fonticon("\33", left);
 }
@@ -229,9 +233,9 @@ label {
 }
 
 .lock-icon {
-  @include fonticon("\30", right);
+  @include fonticon("\e001", right);
   &.unlocked:after {
-    content: "\31";
+    content: "\e000";
   }
 }
 
@@ -259,8 +263,8 @@ blockquote {
 
   &:before {
     color: rgba(150, 150, 150, .5);
-    content: "\201C";
-    font-family: "PT Serif";
+    content: "\23";
+    font-family: "icomoon";
     font-size: 6em;
     position: absolute;
     top: -.2em;
@@ -269,8 +273,8 @@ blockquote {
 
   &:after {
     color: rgba(150, 150, 150, .5);
-    content: "\201E";
-    font-family: "PT Serif";
+    content: "\24";
+    font-family: "icomoon";
     font-size: 5em;
     position: absolute;
     right: -.15em;
@@ -292,7 +296,6 @@ blockquote {
 }
 
 .dropdown-toggle {
-  @include fonticon("\2f", right);
   background-color: white;
   &:active {
     outline: 0;
@@ -457,6 +460,10 @@ blockquote {
     color: $gray;
   }
 
+  .dialog {
+    width: 100%;
+  }
+
   .upper-right {
     float: right;
     display: inline-block;
@@ -468,6 +475,21 @@ blockquote {
     white-space: pre-wrap;
     margin-bottom: .5em;
     clear: both;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .message {
+    margin-bottom: .5em;
+  }
+
+  .buttonbar {
+    margin-bottom: .5em;
+  }
+
+  textarea {
+    min-height: 8em;
   }
 
   .replycount {
@@ -488,10 +510,6 @@ blockquote {
 
 
 
-
-
-
-
 //DETAIL////////////////////////////////
 //This is specific to the detail view.
 .detail {
@@ -509,7 +527,8 @@ blockquote {
     position: absolute;
     right: 0;
     z-index: 1;
-    & > a {
+    & > * {
+      display: inline;
       margin-left: .5em;
     }
   }
@@ -596,17 +615,6 @@ blockquote {
   .upper-right {
     font-size: 1em;
   }
-
-  textarea {
-    width: 100%;
-    min-height: 8em;
-  }
-
-  .bottombar {
-    .btn {
-      margin-right: .5em;
-    }
-  }
 }
 
 
@@ -671,12 +679,14 @@ blockquote {
   max-width: 200px;
   padding: 3px 8px;
   color: #ffffff;
+  font-weight: 600;
   text-align: center;
   text-decoration: none;
   background-color: #000000;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  opacity: .9;
 }
 
 .tooltip-arrow {

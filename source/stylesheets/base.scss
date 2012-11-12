@@ -327,7 +327,6 @@ $em: 14 / 1em !default;
       font-style: normal;
       speak: none;
       font-weight: normal;
-      -webkit-font-smoothing: antialiased;
     }
   }
   @if $iconside == right {
@@ -339,7 +338,6 @@ $em: 14 / 1em !default;
       font-style: normal;
       speak: none;
       font-weight: normal;
-      -webkit-font-smoothing: antialiased;
     }
   }
 }

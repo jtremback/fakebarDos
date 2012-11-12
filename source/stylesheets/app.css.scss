@@ -245,6 +245,11 @@ input[type="checkbox"] {
     cursor: pointer;
   }
 
+  .my-history {
+    @include fonticon("\37", left);
+    float: left;
+  }
+
   &.shown {
     .tri {
       @include icon("tri-right.png");
