@@ -2,16 +2,24 @@
 
   %li.paper.excerpt
     %blockquote {{annotation.excerpt}}
-  %li.paper.detail
-    .annotation
+  %li.paper.detail(data-object="detail")
+    .annotation(data-object="annotation")
       %a.threadexp{:href => "#collapse"}
       .upper-right {{annotation.time}}
       .magicontrols
-        %a.reply-icon(title="Reply")
-        %a.fave-icon(title="Favorite")
-        %a.share-icon(title="Share")
-        %a.flag-icon(title="Flag")
-      %a.upper-left {{annotation.username}}
+        %a.reply-icon(title="Reply" data-action="reply")
+        %a.fave-icon(title="Favorite" data-action="favorite")
+        %a.share-icon(title="Share" data-action="share")
+        .dropdown(title="More Actions")
+          %a.dropdown-toggle.down-icon(data-toggle="dropdown" href="#")
+          %ul.dropdown-menu.pull-right(role="menu") 
+            %li(data-action="edit" ng-show="reply.username == 'woah2'")
+              %a Edit
+            %li(data-action="delete" ng-show="reply.username == 'woah2'")
+              %a Delete
+            %li(data-action="flag" ng-hide="reply.username == 'woah2'")
+              %a Flag
+      %a.upper-left(data-object="username") {{annotation.username}}
       = partial "share-dialog.haml"
       = partial "flag-dialog.haml"
       .body {{annotation.text}}
@@ -20,5 +28,5 @@
 
     .thread
       %ul.annotator-listing
-        = partial "writer.haml"
+        = partial "write-dialog.haml"
         %li.detail(ng-include="'replies-template.html'" ng-repeat="reply in annotation.children" data-object="detail")

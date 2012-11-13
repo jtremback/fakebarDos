@@ -4,67 +4,99 @@ function init () {
 }
 
 
-function showReply() {  
-  $(this).parents('[data-object="detail"]').eq(0).find('[data-object="reply-dialog"]')
-  .eq(0).slideToggle();
-}
+// function showReply() {  
+//   $(this).parents('[data-object="detail"]').eq(0).find('[data-object="reply-dialog"]')
+//   .eq(0).slideToggle();
+// }
 
-function showFlag() {
-  $(this).parents('[data-object="detail"]').eq(0).find('[data-object="flag-dialog"]').eq(0)
-  .slideToggle();
-}
+// function showFlag() {
+//   $(this).parents('[data-object="detail"]').eq(0).find('[data-object="flag-dialog"]').eq(0)
+//   .slideToggle();
+// }
 
-function showShare() {
-  var el = $(this).parents('[data-object="detail"]').eq(0).find('[data-object="share-dialog"]').eq(0);
-  el.slideToggle("fast");
-  el.find("input").select();
-}
+// function showShare() {
+//   var el = $(this).parents('[data-object="detail"]').eq(0).find('[data-object="share-dialog"]').eq(0);
+//   el.slideToggle("fast");
+//   el.find("input").select();
+// }
 
-function showEdit(that, type) {
-  var _annotation = that.parents('[data-object="annotation"]').eq(0);
-  var _dialog = _annotation.find('[data-object="edit-dialog"]').eq(0);
-  var _body = _annotation.find('[data-object="body"]');
-  var _bodytext = _body.text();
-  var _textarea = _dialog.find('textarea');
-  var _message = _dialog.find('[data-object="message"]')
+function showDialog (that, type) {
+  var _detail = that.parents('[data-object="detail"]').eq(0),
+      _annotation = that.parents('[data-object="annotation"]').eq(0),
 
-  var _save = _dialog.find('[data-action="save"]');
-  var _cancel = _dialog.find('[data-action="cancel"]');
-  console.log(that);
+      _dialog = _detail.find('[data-object="' + type + '-dialog"]').eq(0),
 
-  if (type === "edit") {
-    _body.slideUp();
-    _textarea.text(_bodytext);
-    _save.text('Edit'); 
-  } else if (type === "delete") {
-    _message.text("Are you sure you want to delete your annotation?")
-    _body.slideUp();
-    _textarea.hide();
-    _save.text('Delete');
-  } else if (type === "amend") {
-    _message.text("Amend your annotation to correct errors or add information.")
-    _textarea.attr("placeholder", "Amendment...")
-    _save.text('Amend');
-  } else if (type === "retract") {
-    _body.slideUp();
-    _message.text("Retracting an annotation may impact your reputation. Please state the reason you are retracting the annotation.")
-    _textarea.attr("placeholder", "I'm retracting this annotation because...")
-    _save.text('Retract');
+      _body = _detail.find('[data-object="body"]').eq(0),
+      _username = _detail.find('[data-object="username"]').eq(0),
+      _textarea = _dialog.find('textarea'),
+      _origname = _username.text(),
+
+      _cancel = _dialog.find('[data-action="cancel"]'); 
+
+  if(type === "edit") {
+    _dialog.find('textarea').text(_body.text());
+    _body.slideToggle();
+  } else if(type === "delete") {
+    _username.text('[deleted]');
+    _body.slideToggle();
   }
-  _dialog.slideDown();
+  $('[data-object*="dialog"]').not(_dialog).slideUp();
+  _dialog.slideToggle();
+
+  _cancel.click(function(){
+    console.log(_origname);
+    _username.text(_origname);
+    _dialog.slideUp();
+    _body.slideDown();
+  });
 }
 
-function showDelete() {
-  $(this).parents('[data-object="annotation"]').find('[data-object="delete-dialog"]').eq(0)
-  .slideToggle();
-}
+// function showEdit(that, type) {
+//   var _annotation = that.parents('[data-object="annotation"]').eq(0);
+//   var _dialog = _annotation.find('[data-object="edit-dialog"]').eq(0);
+//   var _body = _annotation.find('[data-object="body"]');
+//   var _bodytext = _body.text();
+//   var _textarea = _dialog.find('textarea');
+//   var _message = _dialog.find('[data-object="message"]')
 
-function hideDialog() {
-  $(this).parents('[data-object*="dialog"]')
-  .slideUp();
-  $(this).parents('[data-object="annotation"]').find('[data-object="body"]').slideDown();
-  console.log($(this).parents('[data-object*="dialog"]'));
-}
+//   var _save = _dialog.find('[data-action="save"]');
+//   var _cancel = _dialog.find('[data-action="cancel"]');
+//   console.log(that);
+
+//   if (type === "edit") {
+//     _body.slideUp();
+//     _textarea.text(_bodytext);
+//     _save.text('Edit'); 
+//   } else if (type === "delete") {
+//     _message.text("Are you sure you want to delete your annotation?")
+//     _body.slideUp();
+//     _textarea.hide();
+//     _save.text('Delete');
+//   } else if (type === "amend") {
+//     _message.text("Amend your annotation to correct errors or add information.")
+//     _textarea.attr("placeholder", "Amendment...")
+//     _save.text('Amend');
+//   } else if (type === "retract") {
+//     _body.slideUp();
+//     _message.text("Retracting an annotation may impact your reputation. Please state the reason you are retracting the annotation.")
+//     _textarea.attr("placeholder", "I'm retracting this annotation because...")
+//     _save.text('Retract');
+//   }
+
+//   _dialog.slideDown();
+// }
+
+// function showDelete() {
+//   $(this).parents('[data-object="annotation"]').find('[data-object="delete-dialog"]').eq(0)
+//   .slideToggle();
+// }
+
+// function hideDialog() {
+//   $(this).parents('[data-object*="dialog"]')
+//   .slideUp();
+//   $(this).parents('[data-object="annotation"]').find('[data-object="body"]').slideDown();
+//   console.log($(this).parents('[data-object*="dialog"]'));
+// }
 
 
 function favoriteThis() {
@@ -84,23 +116,32 @@ $(document).ready(function(){
   init();
 
   //EVENTS
-  $('[data-action="reply-button"]').on("click", showReply);
-  $('[data-action="share-button"]').on("click", showShare);
-  $('[data-action="favorite-button"]').on("click", favoriteThis);
 
-  $('[data-action="cancel"]').on("click", hideDialog);
+  // $('[data-action="cancel"]').on("click", hideDialog);
   $('[data-action="edit"]').click(function(){
-    showEdit($(this), "edit");
+    showDialog($(this), "edit");
   });
   $('[data-action="delete"]').click(function(){
-    showEdit($(this), "delete");
+    showDialog($(this), "delete");
   });
-  $('[data-action="amend"]').click(function(){
-    showEdit($(this), "amend");
+  $('[data-action="reply"]').click(function(){
+    showDialog($(this), "write");
   });
-  $('[data-action="retract"]').click(function(){
-    showEdit($(this), "retract");
+  $('[data-action="flag"]').click(function(){
+    showDialog($(this), "flag");
   });
+  $('[data-action="share"]').click(function(){
+    showDialog($(this), "share");
+  });
+  // $('[data-action="delete"]').click(function(){
+  //   showEdit($(this), "delete");
+  // });
+  // $('[data-action="amend"]').click(function(){
+  //   showEdit($(this), "amend");
+  // });
+  // $('[data-action="retract"]').click(function(){
+  //   showEdit($(this), "retract");
+  // });
 
 //VIS MENU
   var VisGroup = '[data-action="vis-group"]';

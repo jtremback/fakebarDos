@@ -3,39 +3,28 @@
   .annotation(data-object="annotation")
     .upper-right {{reply.time}}
     .magicontrols
-      %a.reply-icon(title="Reply" data-action="reply-button")
-      %a.fave-icon(title="Favorite" data-action="favorite-button")
-      %a.share-icon(title="Share" data-action="share-button")
+      %a.reply-icon(title="Reply" data-action="reply")
+      %a.fave-icon(title="Favorite" data-action="favorite")
+      %a.share-icon(title="Share" data-action="share")
       .dropdown(title="More Actions")
         %a.dropdown-toggle.down-icon(data-toggle="dropdown" href="#")
-        %ul.dropdown-menu.pull-right(role="menu" ng-show="reply.username == 'woah2'") 
-          %li(data-action="edit" ng-hide="reply.count.length")
+        %ul.dropdown-menu.pull-right(role="menu") 
+          %li(data-action="edit" ng-show="reply.username == 'woah2'")
             %a Edit
-          %li(data-action="delete" ng-hide="reply.count.length")
+          %li(data-action="delete" ng-show="reply.username == 'woah2'")
             %a Delete
-          %li(data-action="amend" ng-show="reply.count.length")
-            %a Amend
-          %li(data-action="retract" ng-show="reply.count.length")
-            %a Retract
-        %ul.dropdown-menu.pull-right(role="menu" ng-hide="reply.username == 'woah2'") 
-          %li(data-action="flag")
+          %li(data-action="flag" ng-hide="reply.username == 'woah2'")
             %a Flag
 
-    %a.upper-left {{reply.username}}
+    %a.upper-left(data-object="username") {{reply.username}}
     = partial "share-dialog.haml"
     = partial "flag-dialog.haml"
     .body(data-object="body") {{reply.text}}
-    .dialog(data-object="edit-dialog")
-      %textarea.body
-      .message(data-object="message")
-      .buttonbar
-        %button.btn
-          .annotator-save.check-icon(data-action="save") Save
-        %span
-          .annotator-cancel.x-icon(data-action="cancel") Cancel
+    = partial "edit-dialog.haml"
+    = partial "delete-dialog.haml"
     %span.replycount {{reply.count}}
 
   .thread
     %ul.annotator-listing
-      = partial "writer.haml"
+      = partial "write-dialog.haml"
       %li.detail(ng-include="'replies-template.html'" ng-repeat="reply in reply.children" data-object="detail")

@@ -20,6 +20,6 @@
   %textarea.body(placeholder="Please provide some details on why you flagged this post.")
   .buttonbar
     %button.btn
-      .annotator-save.check-icon{:href => "#save"} Save
+      .annotator-save.flag-icon(data-action="save") Flag
     %span
-      .annotator-cancel.x-icon{:href => "#cancel"} Cancel
+      .annotator-cancel.x-icon(data-action="cancel") Cancel
