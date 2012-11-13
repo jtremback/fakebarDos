@@ -296,9 +296,14 @@ blockquote {
 }
 
 .dropdown-toggle {
+  @include fonticon("\3c", right);
   background-color: white;
+  cursor: pointer;
   &:active {
     outline: 0;
+  }
+  &:hover {
+    color: black;
   }
 }
 
