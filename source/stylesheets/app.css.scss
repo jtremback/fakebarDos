@@ -266,6 +266,7 @@ input[type="checkbox"] {
   }
 
   .dropdown-toggle {
+    @include fonticon("\3c", right);
     .provider {
       color: $grayLight;
       display: none;

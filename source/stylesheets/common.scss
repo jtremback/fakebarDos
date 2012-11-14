@@ -109,6 +109,10 @@ label {
   display: inline-block
 }
 
+.tertiarytext {
+  @include tertiarytext;
+}
+
 .icon-hidden {
   &:before {
     color: transparent;
@@ -296,7 +300,6 @@ blockquote {
 }
 
 .dropdown-toggle {
-  @include fonticon("\3c", right);
   background-color: white;
   cursor: pointer;
   &:active {
@@ -379,6 +382,9 @@ blockquote {
 
 //VISIBILITY
 .visibility {
+  .dropdown-toggle {
+    @include fonticon("\3c", right);
+  }
   li {
     @include fonticon("\35", right);
     &:after {
@@ -483,6 +489,12 @@ blockquote {
     width: 100%;
     max-width: 100%;
     min-width: 100%;
+    p:first-child {
+      margin-top: 0;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .message {

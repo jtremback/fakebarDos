@@ -20,6 +20,7 @@ function init () {
 //   el.find("input").select();
 // }
 
+
 function showDialog (that, type) {
   var _detail = that.parents('[data-object="detail"]').eq(0),
       _annotation = that.parents('[data-object="annotation"]').eq(0),
@@ -28,26 +29,74 @@ function showDialog (that, type) {
 
       _body = _detail.find('[data-object="body"]').eq(0),
       _username = _detail.find('[data-object="username"]').eq(0),
-      _textarea = _dialog.find('textarea'),
-      _origname = _username.text(),
+      _time = _detail.find('[data-object="time"]').eq(0),
 
-      _cancel = _dialog.find('[data-action="cancel"]'); 
+      _textarea = _dialog.find('textarea'),
+
+      _origname = _username.text(),
+      _origtext = _body.text(),
+
+      _deployed,
+
+      _cancel = _dialog.find('[data-action="cancel"]'),
+      _save = _dialog.find('[data-action="save"]'); 
 
   if(type === "edit") {
-    _dialog.find('textarea').text(_body.text());
-    _body.slideToggle();
+    _textarea.text(_body.text());
+    _body.slideUp();
+    _dialog.slideDown();
+
+    var cancelFunc = function() {
+      _body.slideDown();
+      _dialog.slideUp();
+    }
+
+    var saveFunc = function() {
+      _body.html(_textarea.val()+"<p class='tertiarytext'>Edited just now. (<a data-action='original'>original</a>)</p>");
+      _body.slideDown();
+      _dialog.slideUp();
+    }
+
   } else if(type === "delete") {
     _username.text('[deleted]');
-    _body.slideToggle();
+    _body.slideUp();
+    _dialog.slideDown();
+
+    var cancelFunc = function() {
+      _body.slideDown();
+      _dialog.slideUp();
+      _username.text(_origname);
+    }
+
+    var saveFunc = function() {
+      _body.html("<p>Reason: <em>"+_textarea.val()+"</em></p>");
+      _time.text("deleted just now")
+      _body.slideDown();
+      _dialog.slideUp();
+    }
+
+  } else {
+    _dialog.slideToggle();
+    console.log("else")
+    var cancelFunc = function() {
+      _body.slideDown();
+      _dialog.slideUp();
+    }
   }
+
+
   $('[data-object*="dialog"]').not(_dialog).slideUp();
-  _dialog.slideToggle();
+
+
 
   _cancel.click(function(){
-    console.log(_origname);
-    _username.text(_origname);
-    _dialog.slideUp();
-    _body.slideDown();
+    console.log(cancelFunc);
+    cancelFunc();
+  });
+
+  _save.click(function(){
+    console.log(saveFunc);
+    saveFunc();
   });
 }
 
