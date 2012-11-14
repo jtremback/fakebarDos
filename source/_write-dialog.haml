@@ -2,7 +2,7 @@
   .annotator-editor
     %form.annotator-widget
       .upper-right.dropdown.visibility
-        .dropdown-toggle.unlocked(data-toggle="dropdown" href="#" title="Visibility") Public
+        .dropdown-toggle(data-object="droplabel" data-toggle="dropdown" href="#" title="Visibility") Public
         %ul.dropdown-menu.pull-right(role="menu") 
           %li(data-action="vis-private")
             %a Private
@@ -16,10 +16,10 @@
             %a Ministry of Truth
       %a.upper-left 
         woah2
-      .lock-icon.inline-block
+      .lock-icon.inline-block(data-object="lock-icon")
       %textarea.body{:placeholder => "Add your thoughts…"}
       .buttonbar
-        %button.btn
+        %span.btn
           .annotator-save.check-icon{:href => "#save"} Save
         %span
           .annotator-cancel.x-icon(data-action="cancel" href="#cancel") Cancel

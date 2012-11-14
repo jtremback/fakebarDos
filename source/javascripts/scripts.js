@@ -36,8 +36,6 @@ function showDialog (that, type) {
       _origname = _username.text(),
       _origtext = _body.text(),
 
-      _deployed,
-
       _cancel = _dialog.find('[data-action="cancel"]'),
       _save = _dialog.find('[data-action="save"]'); 
 
@@ -77,7 +75,6 @@ function showDialog (that, type) {
 
   } else {
     _dialog.slideToggle();
-    console.log("else")
     var cancelFunc = function() {
       _body.slideDown();
       _dialog.slideUp();
@@ -90,63 +87,46 @@ function showDialog (that, type) {
 
 
   _cancel.click(function(){
-    console.log(cancelFunc);
     cancelFunc();
   });
 
   _save.click(function(){
-    console.log(saveFunc);
     saveFunc();
   });
 }
 
-// function showEdit(that, type) {
-//   var _annotation = that.parents('[data-object="annotation"]').eq(0);
-//   var _dialog = _annotation.find('[data-object="edit-dialog"]').eq(0);
-//   var _body = _annotation.find('[data-object="body"]');
-//   var _bodytext = _body.text();
-//   var _textarea = _dialog.find('textarea');
-//   var _message = _dialog.find('[data-object="message"]')
+function visMenu (that, type) {
+  var _dialog = that.parents('[data-object="write-dialog"]').eq(0),
 
-//   var _save = _dialog.find('[data-action="save"]');
-//   var _cancel = _dialog.find('[data-action="cancel"]');
-//   console.log(that);
+      _group = _dialog.find('[data-action="vis-group"]'),
+      _public = _dialog.find('[data-action="vis-public"]'),
+      _private = _dialog.find('[data-action="vis-private"]'),
+      _label = _dialog.find('[data-object="droplabel"]'),
+      _lockicon = _dialog.find('[data-object="lock-icon"]');
 
-//   if (type === "edit") {
-//     _body.slideUp();
-//     _textarea.text(_bodytext);
-//     _save.text('Edit'); 
-//   } else if (type === "delete") {
-//     _message.text("Are you sure you want to delete your annotation?")
-//     _body.slideUp();
-//     _textarea.hide();
-//     _save.text('Delete');
-//   } else if (type === "amend") {
-//     _message.text("Amend your annotation to correct errors or add information.")
-//     _textarea.attr("placeholder", "Amendment...")
-//     _save.text('Amend');
-//   } else if (type === "retract") {
-//     _body.slideUp();
-//     _message.text("Retracting an annotation may impact your reputation. Please state the reason you are retracting the annotation.")
-//     _textarea.attr("placeholder", "I'm retracting this annotation because...")
-//     _save.text('Retract');
-//   }
-
-//   _dialog.slideDown();
-// }
-
-// function showDelete() {
-//   $(this).parents('[data-object="annotation"]').find('[data-object="delete-dialog"]').eq(0)
-//   .slideToggle();
-// }
-
-// function hideDialog() {
-//   $(this).parents('[data-object*="dialog"]')
-//   .slideUp();
-//   $(this).parents('[data-object="annotation"]').find('[data-object="body"]').slideDown();
-//   console.log($(this).parents('[data-object*="dialog"]'));
-// }
-
+  if(type === "group") {
+    console.log("group")
+    that.toggleClass('selected');
+    _public.removeClass('selected');
+    _private.removeClass('selected');
+    _label.text('Groups');
+    _lockicon.removeClass('icon-hidden');
+  } else if(type === "private") {
+    console.log("private")
+    that.addClass('selected');
+    _public.removeClass('selected');
+    _group.removeClass('selected');
+    _label.text('Private');
+    _lockicon.addClass('icon-hidden');
+  } else if(type === "public") {
+    console.log("public")
+    that.addClass('selected');
+    _private.removeClass('selected');
+    _public.removeClass('selected');
+    _label.text('Public');
+    _lockicon.removeClass('icon-hidden');
+  }
+}
 
 function favoriteThis() {
   $(this).toggleClass("checked");
@@ -182,6 +162,16 @@ $(document).ready(function(){
   $('[data-action="share"]').click(function(){
     showDialog($(this), "share");
   });
+
+  $('[data-action="vis-group"]').click(function(){
+    visMenu($(this), "group");
+  });
+  $('[data-action="vis-public"]').click(function(){
+    visMenu($(this), "public");
+  });
+  $('[data-action="vis-private"]').click(function(){
+    visMenu($(this), "private");
+  });    
   // $('[data-action="delete"]').click(function(){
   //   showEdit($(this), "delete");
   // });
@@ -193,31 +183,33 @@ $(document).ready(function(){
   // });
 
 //VIS MENU
-  var VisGroup = '[data-action="vis-group"]';
-  var VisPublic = '[data-action="vis-public"]';
-  var VisPrivate = '[data-action="vis-private"]';
+  
 
-  $(VisGroup).not('.inactive').click(function(){
-    $(VisPublic).removeClass('selected');
-    $(VisPrivate).removeClass('selected');
-    $('.visibility .dropdown-toggle').text('Groups');
-    $(this).parents(Detail).find('.lock-icon').removeClass('icon-hidden').addClass('unlocked');
-    $(this).toggleClass('selected');
-  });
+  // var VisGroup = '[data-action="vis-group"]';
+  // var VisPublic = '[data-action="vis-public"]';
+  // var VisPrivate = '[data-action="vis-private"]';
 
-  $('.visibility li.vis-public').not('.inactive').click(function(){
-    $('.visibility li').removeClass('selected');
-    $('.visibility .dropdown-toggle').text('Public');
-    $(this).parent().parent().parent().find('.lock-icon').addClass('icon-hidden');
-    $(this).toggleClass('selected');
-  });
+  // $(VisGroup).not('.inactive').click(function(){
+  //   $(VisPublic).removeClass('selected');
+  //   $(VisPrivate).removeClass('selected');
+  //   $('.visibility .dropdown-toggle').text('Groups');
+  //   $(this).parents(Detail).find('.lock-icon').removeClass('icon-hidden').addClass('unlocked');
+  //   $(this).toggleClass('selected');
+  // });
 
-  $('.visibility li.vis-private').not('.inactive').click(function(){
-    $('.visibility li').removeClass('selected');
-    $('.visibility .dropdown-toggle').text('Private');
-    $(this).parent().parent().parent().find('.lock-icon').removeClass('icon-hidden').removeClass('unlocked');
-    $(this).toggleClass('selected');
-  });
+  // $('.visibility li.vis-public').not('.inactive').click(function(){
+  //   $('.visibility li').removeClass('selected');
+  //   $('.visibility .dropdown-toggle').text('Public');
+  //   $(this).parent().parent().parent().find('.lock-icon').addClass('icon-hidden');
+  //   $(this).toggleClass('selected');
+  // });
+
+  // $('.visibility li.vis-private').not('.inactive').click(function(){
+  //   $('.visibility li').removeClass('selected');
+  //   $('.visibility .dropdown-toggle').text('Private');
+  //   $(this).parent().parent().parent().find('.lock-icon').removeClass('icon-hidden').removeClass('unlocked');
+  //   $(this).toggleClass('selected');
+  // });
 
 
 
