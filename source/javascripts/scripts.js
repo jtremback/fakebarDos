@@ -104,32 +104,36 @@ function visMenu (that, type) {
       _label = _dialog.find('[data-object="droplabel"]'),
       _lockicon = _dialog.find('[data-object="lock-icon"]');
 
-  if(type === "group") {
-    console.log("group")
-    that.toggleClass('selected');
-    _public.removeClass('selected');
-    _private.removeClass('selected');
-    _label.text('Groups');
-    _lockicon.removeClass('icon-hidden');
-  } else if(type === "private") {
-    console.log("private")
-    that.addClass('selected');
-    _public.removeClass('selected');
-    _group.removeClass('selected');
-    _label.text('Private');
-    _lockicon.addClass('icon-hidden');
-  } else if(type === "public") {
+
+  if(type === "public") {
     console.log("public")
     that.addClass('selected');
     _private.removeClass('selected');
-    _public.removeClass('selected');
     _label.text('Public');
-    _lockicon.removeClass('icon-hidden');
+    _lockicon.addClass('icon-hidden');
   }
+  else if(type === "private") {
+    console.log("private")
+    that.addClass('selected');
+    _public.removeClass('selected');
+    _label.text('Private');
+    _lockicon.removeClass('icon-hidden');
+  } 
+  // else if(type === "group") {
+  //   console.log("group")
+  //   that.toggleClass('selected');
+  //   _public.removeClass('selected');
+  //   _private.removeClass('selected');
+  //   _label.text('Groups');
+  //   _lockicon.removeClass('icon-hidden'); 
+  // } 
 }
 
-function favoriteThis() {
-  $(this).toggleClass("checked");
+function favoriteThis(that) {
+  var _detail = that.parents('[data-object="detail"]').eq(0);
+
+  that.toggleClass("checked");
+  
 }
 
 

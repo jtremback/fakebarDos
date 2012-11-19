@@ -4,16 +4,16 @@
       .upper-right.dropdown.visibility
         .dropdown-toggle(data-object="droplabel" data-toggle="dropdown" href="#" title="Visibility") Public
         %ul.dropdown-menu.pull-right(role="menu") 
+          %li.li-underline.selected(data-action="vis-public")
+            %a Public
           %li(data-action="vis-private")
             %a Private
-          %li.li-underline(data-action="vis-public")
-            %a Public
-          %li(data-action="vis-group")
-            %a EFF Brigade
-          %li(data-action="vis-group")
-            %a lollerskatez intl.
-          %li(data-action="vis-group")
-            %a Ministry of Truth
+          / %li(data-action="vis-group")
+          /   %a EFF Brigade
+          / %li(data-action="vis-group")
+          /   %a lollerskatez intl.
+          / %li(data-action="vis-group")
+          /   %a Ministry of Truth
       %a.upper-left 
         woah2
       .lock-icon.inline-block(data-object="lock-icon")
