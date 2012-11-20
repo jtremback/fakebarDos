@@ -527,47 +527,44 @@ blockquote {
 
 
 //MAGICONTROLS
-.magicontainer {
+.magicontrols {
   position: absolute;
-  right: 0;
-  .magicontrols {
-    position: relative;
-    whitespace: no-wrap;
-    & > * {
-      display: inline-block;
-      margin-left: .5em;
-    }
-    .go {
-      @include transition(opacity 0.1s ease-in-out .5s);
-      @include tertiarytext;
-      opacity: 1;
-    }
+  @include transition(right 0.1s ease-in-out .5s);
+  right: -.5em; //ADJUSTMENT BECAUSE OF BUG HAVING TO DO WITH FONT SIZE 0
+  & > * {
+    display: inline-block;
+  }
+  .go {
+    @include transition(opacity 0.1s ease-in-out .5s);
+    @include tertiarytext;
+    opacity: 1;
+  }
 
-    .grow, .show {
-      @include transition(font-size 0.1s ease-in-out .5s, opacity 0.1s ease-in-out .5s);
-    }
+  .grow, .show {
+    @include transition(font-size 0.1s ease-in-out .5s, opacity 0.1s ease-in-out .5s, margin 0.15s ease-in-out .5s);
+    margin: 0;
+  }
 
-    .grow {
-      @include tertiarytext;
-    }
-    .show {
-      font-size: 0;
-      opacity: 0;
-    }
+  .grow {
+    @include tertiarytext;
+  }
+  .show {
+    font-size: 0;
+    opacity: 0;
   }
   .annotation:hover & {
-    .magicontrols {
-      right: 0;
-      .go {
-        opacity: 0;
-      }
-      .grow, .show {
-        font-size: 1em;
-        opacity: 1;
-      }
+    right: 0;
+    .go {
+      opacity: 0;
+    }
+    .grow, .show {
+      margin-left: .5em;
+      font-size: 1em;
+      opacity: 1;
     }
   }
 }
+
 
 
 

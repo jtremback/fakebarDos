@@ -1,22 +1,22 @@
 %script(id="replies-template.html" type="text/ng-template")
   %a.threadexp(href="#collapse")
   .annotation(data-object="annotation")
-    .magicontainer
-      .magicontrols
-        .go.timestamp(data-object="time") {{reply.time}}
-        .grow.lock-icon(data-object="lock-icon" ng-show="reply.priv")
-        .fave-icon(title="Favorite" data-action="favorite" ng-click="reply.fave = !(reply.fave)" ng-class="{true:'grow checked', false:'show'}[reply.fave]")
-        .show.reply-icon(title="Reply" data-action="reply")
-        .show.share-icon(title="Share" data-action="share")
-        .show.dropdown(title="More Actions")
-          .dropdown-toggle.down-icon(data-toggle="dropdown" href="#")
-          %ul.dropdown-menu.pull-right(role="menu") 
-            %li(data-action="edit" ng-show="reply.username == 'woah2'")
-              %a Edit
-            %li(data-action="delete" ng-show="reply.username == 'woah2'")
-              %a Delete
-            %li(data-action="flag" ng-hide="reply.username == 'woah2'")
-              %a Flag
+    .magicontrols
+      .go.timestamp(data-object="time") {{reply.time}}
+      .grow.lock-icon(data-object="lock-icon" ng-show="reply.priv")
+      .fave-icon(title="Favorite" data-action="favorite" ng-click="reply.fave = !(reply.fave)" ng-class="{true:'grow checked', false:'show'}[reply.fave]")
+      .show.reply-icon(title="Reply" data-action="reply")
+      .show.share-icon(title="Share" data-action="share")
+      .show.dropdown(title="More Actions")
+        .dropdown-toggle.down-icon(data-toggle="dropdown" href="#")
+        %ul.dropdown-menu.pull-right(role="menu") 
+          %li(data-action="edit" ng-show="reply.username == 'woah2'")
+            %a Edit
+          %li(data-action="delete" ng-show="reply.username == 'woah2'")
+            %a Delete
+          %li(data-action="flag" ng-hide="reply.username == 'woah2'")
+            %a Flag
+
 
     %a.upper-left(data-object="username") {{reply.username}}
     = partial "share-dialog.haml"

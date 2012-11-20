@@ -3,21 +3,22 @@
   %li.paper.excerpt
     %blockquote {{annotation.excerpt}}
   %li.paper.detail(data-object="detail")
+    %a.threadexp{:href => "#collapse"}
     .annotation(data-object="annotation")
-      %a.threadexp{:href => "#collapse"}
-      .upper-right {{annotation.time}}
       .magicontrols
-        %a.reply-icon(title="Reply" data-action="reply")
-        %a.fave-icon(title="Favorite" data-action="favorite")
-        %a.share-icon(title="Share" data-action="share")
-        .dropdown(title="More Actions")
-          %a.dropdown-toggle.down-icon(data-toggle="dropdown" href="#")
+        .go.timestamp(data-object="time") {{annotation.time}}
+        .grow.lock-icon(data-object="lock-icon" ng-show="annotation.priv")
+        .fave-icon(title="Favorite" data-action="favorite" ng-click="annotation.fave = !(annotation.fave)" ng-class="{true:'grow checked', false:'show'}[annotation.fave]")
+        .show.reply-icon(title="Reply" data-action="reply")
+        .show.share-icon(title="Share" data-action="share")
+        .show.dropdown(title="More Actions")
+          .dropdown-toggle.down-icon(data-toggle="dropdown" href="#")
           %ul.dropdown-menu.pull-right(role="menu") 
-            %li(data-action="edit" ng-show="reply.username == 'woah2'")
+            %li(data-action="edit" ng-show="annotation.username == 'woah2'")
               %a Edit
-            %li(data-action="delete" ng-show="reply.username == 'woah2'")
+            %li(data-action="delete" ng-show="annotation.username == 'woah2'")
               %a Delete
-            %li(data-action="flag" ng-hide="reply.username == 'woah2'")
+            %li(data-action="flag" ng-hide="annotation.username == 'woah2'")
               %a Flag
       %a.upper-left(data-object="username") {{annotation.username}}
       = partial "share-dialog.haml"
