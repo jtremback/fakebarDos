@@ -531,39 +531,39 @@ blockquote {
   position: absolute;
   right: 0;
   .magicontrols {
-    @include single-transition(right, 0.05s, ease-in, .5s);
     position: relative;
-    right: -5em;
     whitespace: no-wrap;
-    .timestamp {
-      @include single-transition(opacity, 0.1s, ease-in-out, .5s);
-    }
-    .shown, .hidden {
+    & > * {
       display: inline-block;
-      & > * {
-        display: inline-block;
-      }
+      margin-left: .5em;
     }
-    .shown {
-      @include single-transition(font-size, 0.1s, ease-in-out, .5s);
+    .go {
+      @include transition(opacity 0.1s ease-in-out .5s);
+      @include tertiarytext;
+      opacity: 1;
+    }
+
+    .grow, .show {
+      @include transition(font-size 0.1s ease-in-out .5s, opacity 0.1s ease-in-out .5s);
+    }
+
+    .grow {
       @include tertiarytext;
     }
-    .hidden {
-      @include single-transition(opacity, 0.1s, ease-in-out, .5s);
+    .show {
+      font-size: 0;
       opacity: 0;
     }
   }
   .annotation:hover & {
     .magicontrols {
       right: 0;
-      .shown {
-        font-size: 1em;
-      }
-      .hidden {
-        opacity: 1;
-      }
-      .timestamp {
+      .go {
         opacity: 0;
+      }
+      .grow, .show {
+        font-size: 1em;
+        opacity: 1;
       }
     }
   }

@@ -90,6 +90,7 @@ function DetailList($scope) {
       time: "about 3 days ago",
       stance: "neut",
       score: 86,
+      fave: false,
       excerpt: "Demonstrators seized bottles of liquor and wine from the offices along with cartons of cigarettes, items which Chinese officials frequently receive as bribes. A photograph posted on Sina Weibo, the main Chinese microblogging service, showed some of the items displayed outside the government building.",
       text: "Chinese officials sound really easy to bribe.",
       count: "15 replies",
@@ -99,6 +100,7 @@ function DetailList($scope) {
           time: "about 1 day ago",
           stance: "pos",
           score: 16,
+          fave: true,
           text: "Just talked to someone who came here from China. Apparently foreign liquor and cigarettes cost ten-fold of its original price, if not more. So these things are easily $100 each. Not to mention these were only items found in the office, not their private mansion. Also learned that it's very common to treat someone to dinner or a massage parlor as form of bribery. A good fancy dinner cost a few hundred dollars, even thousands of dollars. The massage parlor usually offer some special kind of service in the back-end.",
           count: "3 replies",
           children: [
@@ -107,6 +109,7 @@ function DetailList($scope) {
               time: "about 1 day ago",
               stance: "neut",
               score: 32,
+              fave: false,
               text: "what if the corrupt official does't like 'the special kind of service in the back end'?",
               count: "1 reply",
               children: [
@@ -115,6 +118,7 @@ function DetailList($scope) {
                   time: "about 1 day ago",
                   stance: "pos",
                   score: 12,
+                  fave: false,
                   text: "I'm sure they provide special service in the front end too. ;)"
                 }
               ]
@@ -124,6 +128,8 @@ function DetailList($scope) {
               time: 'about 22 hours ago',
               stance: "neg",
               score: 20,
+              fave: false,
+              priv: true,
               text: 'Ya, its called using back doors and is considered normal and is so common place that it borders on acceptable in Chinese culture.'
             }
           ]
@@ -133,6 +139,7 @@ function DetailList($scope) {
           time: 'about 1 day ago',
           stance: "neut",
           score: 47,
+          fave: false,
           text: 'China has had some of the most insanely fast economic growth of world history in the past couple of decades. Very few will protest until this kind of growth stops.',
           count: "10 replies",
           children: [
@@ -141,6 +148,7 @@ function DetailList($scope) {
               time: 'about 1 day ago',
               stance: "neg",
               score: 10,
+              fave: false,
               text: "Actually there's been many reports on how little, if any, benefits of this decades-long growth for the poor and rural. Here's one such report: http://www.nytimes.com/2008/01/13/world/asia/13china.html?pagewanted=all",
               count: "9 replies",
               children: [
@@ -149,6 +157,7 @@ function DetailList($scope) {
                   time: 'about 1 day ago',
                   stance: "neg",
                   score: 36,
+                  fave: false,
                   text: 'its becuase the chinese rural poor are the government sanctioned rural poor...they arent allowed to join into the urban growth because they are designated rural workers http://en.wikipedia.org/wiki/Hukou_system china has a form of caste system thats not talked about much...the government fears that ending it would catapult all the rural poor into the cities and that it would fuck everything up',
                   count: "7 replies",
                   children: [
@@ -157,6 +166,7 @@ function DetailList($scope) {
                       time: 'about 1 day ago',
                       stance: "pos",
                       score: 18,
+                      fave: false,
                       text: 'Yep, they have an internal passport like system.'
                     },
                     {
@@ -164,6 +174,7 @@ function DetailList($scope) {
                       time: 'about 23 hours ago',
                       stance: "pos",
                       score: 15,
+                      fave: false,
                       text: "I remember seeing a video on reddit a year or so ago where an economist was displaying the vast wealth disparities in china based on the province. Without really getting into details, it showed how many of the most industrialized urban areas had wealth equivalent to the wealthiest western nations while the rural areas had wealth equivalent to some of the poorest areas in Africa. I can't seem to find it though, anyone know what I'm talking about?",
                       count: "5 replies",
                       children: [
@@ -172,6 +183,7 @@ function DetailList($scope) {
                           time: 'about 20 hours ago',
                           stance: "neut",
                           score: 10,
+                          fave: false,
                           text: 'http://www.economist.com/content/chinese_equivalents',
                           count: "3 replies",
                           children: [
@@ -180,6 +192,7 @@ function DetailList($scope) {
                               time: 'about 19 hours ago',
                               stance: "neg",
                               score: 21,
+                              fave: true,
                               text: "If you look at GDP per capita, it's actually not that bad. Even the poorest province (Guizhou) is still on the same level as India. And with the exemption of city states like HK, Macau, Shanghai, Beijing and Tianjin no province is richer than 4 times the poorest. That's better than Brazil and India inequality-wise, but not as good as in the US of course: Mississippi has about half the GDP per capita of Connecticut, one of the richest.",
                               count: "2 replies",
                               children: [
@@ -188,6 +201,7 @@ function DetailList($scope) {
                                   time: 'about 19 hours ago',
                                   stance: "pos",
                                   score: 10,
+                                  fave: false,
                                   text: "China is not the police state most people in the West imagine it to be.",
                                   count: "1 reply",
                                   children: [
@@ -196,6 +210,7 @@ function DetailList($scope) {
                                       time: 'about 19 hours ago',
                                       stance: "pos",
                                       score: 5,
+                                      fave: false,
                                       text: "Yes and no. I imagine if you go ask some random guy in the Bible Belt to mention some differences between, say, China and North Korea, I believe there's a very good chance they can't really do it. They're like a world apart in reality."
                                     }
                                   ]
@@ -209,6 +224,7 @@ function DetailList($scope) {
                           time: "about 20 hours ago",
                           stance: "neg",
                           score: 7,
+                          fave: false,
                           text: "Oh no, that could never happen here. Eastern Tennessee -vs- NYC, cough, cough. Compton -vs- Beverly Hills -- that's only a few miles."
                         }
                       ]
@@ -220,6 +236,7 @@ function DetailList($scope) {
                   time: "about 20 hours ago",
                   stance: "neg",
                   score: 7,
+                  fave: false,
                   text: "Oh no, that could never happen here. Eastern Tennessee -vs- NYC, cough, cough. Compton -vs- Beverly Hills -- that's only a few miles."
                 }
               ]
