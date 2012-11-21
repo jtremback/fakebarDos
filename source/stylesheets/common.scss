@@ -206,9 +206,9 @@ label {
 }
 
 .fave-icon {
-  @include fonticon("\2b", left);
+  @include fonticon("\e006", left);
   &.checked:before {
-    content: "\2c";
+    content: "\e005";
   }
 }
 
@@ -236,11 +236,8 @@ label {
   @include fonticon("\36", left);
 }
 
-.lock-icon {
-  @include fonticon("\e001", right);
-  &.unlocked:after {
-    content: "\e000";
-  }
+.vis-icon {
+  @include fonticon("\34", left);
 }
 
 //EXCERPT////////////////////////////////
@@ -535,9 +532,8 @@ blockquote {
     display: inline-block;
   }
   .go {
-    @include transition(opacity 0.1s ease-in-out .5s);
+    @include transition(color 0.1s ease-in-out .5s);
     @include tertiarytext;
-    opacity: 1;
   }
 
   .grow, .show {
@@ -555,7 +551,7 @@ blockquote {
   .annotation:hover & {
     right: 0;
     .go {
-      opacity: 0;
+      color: transparent;
     }
     .grow, .show {
       margin-left: .5em;
@@ -576,8 +572,6 @@ blockquote {
   .paper > .threadexp {
     display: none;
   }
-
-
 
   //Threaded discussion specific
   .annotator-listing {

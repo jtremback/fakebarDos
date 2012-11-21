@@ -102,7 +102,7 @@ function visMenu (that, type) {
       _public = _dialog.find('[data-action="vis-public"]'),
       _private = _dialog.find('[data-action="vis-private"]'),
       _label = _dialog.find('[data-object="droplabel"]'),
-      _lockicon = _dialog.find('[data-object="lock-icon"]');
+      _lockicon = _dialog.find('[data-object="vis-icon"]');
 
 
   if(type === "public") {
@@ -142,9 +142,9 @@ $(document).ready(function(){
 
   $('.dropdown-toggle').dropdown()
   $('.magicontrols *').tooltip({placement: 'top', delay: { show: 200, hide: 200 }, fade: true})
-  $('.lock-icon').tooltip({placement: 'bottom', delay: { show: 500, hide: 100 }, fade: true})
+  $('.vis-icon').tooltip({placement: 'bottom', delay: { show: 500, hide: 100 }, fade: true})
 
-  $(".writer .lock-icon").addClass('icon-hidden');
+  $(".writer .vis-icon").addClass('icon-hidden');
 
   init();
 
@@ -197,21 +197,21 @@ $(document).ready(function(){
   //   $(VisPublic).removeClass('selected');
   //   $(VisPrivate).removeClass('selected');
   //   $('.visibility .dropdown-toggle').text('Groups');
-  //   $(this).parents(Detail).find('.lock-icon').removeClass('icon-hidden').addClass('unlocked');
+  //   $(this).parents(Detail).find('.vis-icon').removeClass('icon-hidden').addClass('unlocked');
   //   $(this).toggleClass('selected');
   // });
 
   // $('.visibility li.vis-public').not('.inactive').click(function(){
   //   $('.visibility li').removeClass('selected');
   //   $('.visibility .dropdown-toggle').text('Public');
-  //   $(this).parent().parent().parent().find('.lock-icon').addClass('icon-hidden');
+  //   $(this).parent().parent().parent().find('.vis-icon').addClass('icon-hidden');
   //   $(this).toggleClass('selected');
   // });
 
   // $('.visibility li.vis-private').not('.inactive').click(function(){
   //   $('.visibility li').removeClass('selected');
   //   $('.visibility .dropdown-toggle').text('Private');
-  //   $(this).parent().parent().parent().find('.lock-icon').removeClass('icon-hidden').removeClass('unlocked');
+  //   $(this).parent().parent().parent().find('.vis-icon').removeClass('icon-hidden').removeClass('unlocked');
   //   $(this).toggleClass('selected');
   // });
 

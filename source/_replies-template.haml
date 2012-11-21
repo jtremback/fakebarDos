@@ -3,7 +3,7 @@
   .annotation(data-object="annotation")
     .magicontrols
       .go.timestamp(data-object="time") {{reply.time}}
-      .grow.lock-icon(data-object="lock-icon" ng-show="reply.priv")
+      .grow.vis-icon(data-object="vis-icon" ng-show="reply.priv")
       .fave-icon(title="Favorite" data-action="favorite" ng-click="reply.fave = !(reply.fave)" ng-class="{true:'grow checked', false:'show'}[reply.fave]")
       .show.reply-icon(title="Reply" data-action="reply")
       .show.share-icon(title="Share" data-action="share")
@@ -24,7 +24,8 @@
     .body(data-object="body") {{reply.text}}
     = partial "edit-dialog.haml"
     = partial "delete-dialog.haml"
-    %span.replycount {{reply.count}}
+    .bottombar
+      %span.replycount {{reply.count}}
 
   .thread
     %ul.annotator-listing

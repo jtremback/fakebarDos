@@ -7,7 +7,7 @@
     .annotation(data-object="annotation")
       .magicontrols
         .go.timestamp(data-object="time") {{annotation.time}}
-        .grow.lock-icon(data-object="lock-icon" ng-show="annotation.priv")
+        .grow.vis-icon(data-object="vis-icon" ng-show="annotation.priv")
         .fave-icon(title="Favorite" data-action="favorite" ng-click="annotation.fave = !(annotation.fave)" ng-class="{true:'grow checked', false:'show'}[annotation.fave]")
         .show.reply-icon(title="Reply" data-action="reply")
         .show.share-icon(title="Share" data-action="share")
