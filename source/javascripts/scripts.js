@@ -56,7 +56,7 @@ function showDialog (that, type) {
     }
 
   } else if(type === "delete") {
-    _username.text('[deleted]');
+    _username.text('Delete annotation:');
     _body.slideUp();
     _dialog.slideDown();
 
@@ -68,6 +68,7 @@ function showDialog (that, type) {
 
     var saveFunc = function() {
       _body.html("<p>Reason: <em>"+_textarea.val()+"</em></p>");
+      _username.text('Annotation deleted.');
       _time.text("deleted just now")
       _body.slideDown();
       _dialog.slideUp();

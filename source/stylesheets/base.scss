@@ -169,6 +169,7 @@ $em: 14 / 1em !default;
     color: black;
     & > * {
       opacity: 1;
+      color: black;
     }
   }
 
@@ -324,6 +325,7 @@ $em: 14 / 1em !default;
       vertical-align: -.1em;
       font-family: 'icomoon';
       font-style: normal;
+      margin-right: .3em;
       speak: none;
       font-weight: normal;
     }
@@ -334,6 +336,7 @@ $em: 14 / 1em !default;
       vertical-align: -.1em;
       font-family: 'icomoon';
       font-style: normal;
+      margin-left: .3em;
       speak: none;
       font-weight: normal;
     }
