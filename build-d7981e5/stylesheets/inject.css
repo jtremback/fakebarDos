@@ -1,0 +1,236 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.woff");
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.svg#icomoon") format("svg"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url("../fonts/merriweather-regular-webfont.eot");
+  src: url("../fonts/merriweather-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-regular-webfont.woff") format("woff"), url("../fonts/merriweather-regular-webfont.ttf") format("truetype"), url("../fonts/merriweather-regular-webfont.svg#merriweatherregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("../fonts/sourcesanspro-semibold-webfont.eot");
+  src: url("../fonts/sourcesanspro-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-semibold-webfont.woff") format("woff"), url("../fonts/sourcesanspro-semibold-webfont.ttf") format("truetype"), url("../fonts/sourcesanspro-semibold-webfont.svg#source_sans_pro_semiboldRg") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("../fonts/sourcesanspro-regular-webfont.eot");
+  src: url("../fonts/sourcesanspro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-regular-webfont.woff") format("woff"), url("../fonts/sourcesanspro-regular-webfont.ttf") format("truetype"), url("../fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular") format("svg");
+  font-weight: 400; }
+
+/* Shadow mixins */
+/* line 7, inject.css.scss */
+.annotator-adder {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f9f9f9));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  -webkit-border-radius: 0.15em;
+  -moz-border-radius: 0.15em;
+  -ms-border-radius: 0.15em;
+  -o-border-radius: 0.15em;
+  border-radius: 0.15em;
+  -webkit-box-shadow: inset 0 0.2em 0 rgba(255, 255, 255, 0.2), 0 0.05em 0.1em rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: inset 0 0.2em 0 rgba(255, 255, 255, 0.2), 0 0.05em 0.1em rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 0.2em 0 rgba(255, 255, 255, 0.2), 0 0.05em 0.1em rgba(0, 0, 0, 0.08);
+  color: #777777;
+  background-color: #ffffff;
+  border: 1px solid lightgrey;
+  border-radius: .2em;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 1em;
+  padding: .33em .5em;
+  cursor: pointer;
+  display: inline-block;
+  padding: .4em .9em .5em;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+  color: #777777;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -50px;
+  padding: 5px;
+  position: absolute;
+  border: 4px solid #333333;
+  border-radius: 7px;
+  width: 40px;
+  z-index: 999; }
+  /* line 142, base.scss */
+  .annotator-adder:focus {
+    outline: 0;
+    border: 1px solid #969696;
+    -webkit-box-shadow: inset 1px 1px 6px -1px lightgrey;
+    -moz-box-shadow: inset 1px 1px 6px -1px lightgrey;
+    box-shadow: inset 1px 1px 6px -1px lightgrey; }
+  /* line 165, base.scss */
+  .annotator-adder:hover {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefe), color-stop(50%, #f4f4f4), color-stop(51%, #e2e2e2), color-stop(100%, #fdfdfd));
+    background-image: -webkit-linear-gradient(top, #fefefe 0%, #f4f4f4 50%, #e2e2e2 51%, #fdfdfd 100%);
+    background-image: -moz-linear-gradient(top, #fefefe 0%, #f4f4f4 50%, #e2e2e2 51%, #fdfdfd 100%);
+    background-image: -o-linear-gradient(top, #fefefe 0%, #f4f4f4 50%, #e2e2e2 51%, #fdfdfd 100%);
+    background-image: linear-gradient(top, #fefefe 0%, #f4f4f4 50%, #e2e2e2 51%, #fdfdfd 100%);
+    border-color: #969696 #969696 #777777;
+    color: black; }
+    /* line 170, base.scss */
+    .annotator-adder:hover > * {
+      opacity: 1;
+      color: black; }
+  /* line 176, base.scss */
+  .annotator-adder:active {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fcfcfc), color-stop(50%, #f3f3f3), color-stop(51%, #e1e1e1), color-stop(100%, #fbfbfb));
+    background-image: -webkit-linear-gradient(top, #fcfcfc 0%, #f3f3f3 50%, #e1e1e1 51%, #fbfbfb 100%);
+    background-image: -moz-linear-gradient(top, #fcfcfc 0%, #f3f3f3 50%, #e1e1e1 51%, #fbfbfb 100%);
+    background-image: -o-linear-gradient(top, #fcfcfc 0%, #f3f3f3 50%, #e1e1e1 51%, #fbfbfb 100%);
+    background-image: linear-gradient(top, #fcfcfc 0%, #f3f3f3 50%, #e1e1e1 51%, #fbfbfb 100%);
+    -webkit-box-shadow: inset 0 0.15em 0.25em rgba(0, 0, 0, 0.15), 0 0.05em 0.1em rgba(0, 0, 0, 0);
+    -moz-box-shadow: inset 0 0.15em 0.25em rgba(0, 0, 0, 0.15), 0 0.05em 0.1em rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0.15em 0.25em rgba(0, 0, 0, 0.15), 0 0.05em 0.1em rgba(0, 0, 0, 0);
+    border-color: #969696 #969696 #777777;
+    top: .1em; }
+  /* line 22, inject.css.scss */
+  .annotator-adder:before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: #fdfdfd;
+    bottom: -8px;
+    border-bottom: 4px solid #333333;
+    border-right: 4px solid #333333;
+    content: "";
+    display: block;
+    height: 6px;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    right: 0;
+    width: 6px; }
+  /* line 39, inject.css.scss */
+  .annotator-adder button {
+    background: url("../images/pen_1.png");
+    background-size: 95% 95%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    opacity: .8;
+    text-indent: -999em;
+    width: 100%; }
+    /* line 51, inject.css.scss */
+    .annotator-adder button::-moz-focus-inner {
+      border: 0; }
+  /* line 56, inject.css.scss */
+  .annotator-adder:hover {
+    -webkit-box-shadow: 1px 1px 6px -2px #969696;
+    -moz-box-shadow: 1px 1px 6px -2px #969696;
+    box-shadow: 1px 1px 6px -2px #969696;
+    border-color: black; }
+    /* line 60, inject.css.scss */
+    .annotator-adder:hover:before {
+      border-color: black; }
+    /* line 64, inject.css.scss */
+    .annotator-adder:hover button {
+      opacity: 1; }
+
+/* line 73, inject.css.scss */
+.annotator-hl {
+  -webkit-transition: "background-color,color" 0.03s linear;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition: "background-color,color" 0.03s linear 0.1s;
+  -o-transition: "background-color,color" 0.03s linear 0.1s;
+  transition: "background-color,color" 0.03s linear 0.1s; }
+
+/* line 77, inject.css.scss */
+.annotator-hl-active, .annotator-hl-temporary {
+  background: #c9d7f1;
+  color: black; }
+  /* line 80, inject.css.scss */
+  .annotator-hl-active::-moz-selection, .annotator-hl-temporary::-moz-selection {
+    background: #c9d7f1;
+    color: black; }
+  /* line 84, inject.css.scss */
+  .annotator-hl-active::-moz-selection, .annotator-hl-active::-moz-window-inactive, .annotator-hl-active::window-inactive, .annotator-hl-temporary::-moz-selection, .annotator-hl-temporary::-moz-window-inactive, .annotator-hl-temporary::window-inactive {
+    background: #c9d7f1;
+    color: black; }
+  /* line 88, inject.css.scss */
+  .annotator-hl-active::selection, .annotator-hl-active::selection:window-inactive, .annotator-hl-temporary::selection, .annotator-hl-temporary::selection:window-inactive {
+    background: #c9d7f1;
+    color: black; }
+
+/* line 94, inject.css.scss */
+.annotator-notice {
+  display: none; }
+
+/* line 101, inject.css.scss */
+.annotator-frame {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 500;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+  /* line 109, inject.css.scss */
+  .annotator-frame.annotator-collapsed {
+    margin-left: -42px; }
+
+/*
+  Mobile layout
+  240–479 px
+  Zoomed out below 320 px
+*/
+@media screen and (min-width: 15em) {
+  /* line 123, inject.css.scss */
+  .annotator-frame {
+    width: 99%;
+    margin-left: -99%; } }
+/*
+  Wide mobile layout
+  480-767 px
+  Zoomed in above 480 px
+*/
+@media screen and (min-width: 30em) {
+  /* line 136, inject.css.scss */
+  .annotator-frame {
+    width: 70%;
+    margin-left: -70%; } }
+/*
+  Tablet layout
+  600-911 px
+  Zoomed in above 600 px
+*/
+@media screen and (min-width: 37.5em) {
+  /* line 149, inject.css.scss */
+  .annotator-frame {
+    -webkit-transition: margin-left 0.4s;
+    -moz-transition: margin-left 0.4s;
+    -o-transition: margin-left 0.4s;
+    transition: margin-left 0.4s;
+    width: 470px;
+    margin-left: -470px; } }
+/*
+  Widescreen layout
+  912-1887 px
+  Zoomed in above 912 px
+*/
+/*
+  Huge-screen layout
+  1888-2520 px
+  Zoomed in above 1920 px
+*/

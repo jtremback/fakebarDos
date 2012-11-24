@@ -1,0 +1,1572 @@
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+/*
+  Consistency fixes
+  adopted from http://necolas.github.com/normalize.css/
+  */
+/* line 9, reset.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 11, reset.scss */
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* line 17, reset.scss */
+body {
+  min-height: 100%;
+  font-size: 100%; }
+
+/* line 19, reset.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+/* line 25, reset.scss */
+sup {
+  top: -0.5em; }
+
+/* line 26, reset.scss */
+sub {
+  bottom: -0.25em; }
+
+/* line 28, reset.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/* line 34, reset.scss */
+b, strong {
+  font-weight: 600; }
+
+/* line 35, reset.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/* line 37, reset.scss */
+a img, img {
+  -ms-interpolation-mode: bicubic; }
+
+/* line 41, reset.scss */
+input, textarea, button, select {
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  line-height: normal;
+  margin: 0; }
+
+/* line 50, reset.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button; }
+
+/* line 55, reset.scss */
+textarea {
+  overflow: auto; }
+
+/* line 58, reset.scss */
+img::selection,
+img::-moz-selection {
+  background: transparent; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.woff");
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.svg#icomoon") format("svg"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url("../fonts/merriweather-regular-webfont.eot");
+  src: url("../fonts/merriweather-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-regular-webfont.woff") format("woff"), url("../fonts/merriweather-regular-webfont.ttf") format("truetype"), url("../fonts/merriweather-regular-webfont.svg#merriweatherregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("../fonts/sourcesanspro-semibold-webfont.eot");
+  src: url("../fonts/sourcesanspro-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-semibold-webfont.woff") format("woff"), url("../fonts/sourcesanspro-semibold-webfont.ttf") format("truetype"), url("../fonts/sourcesanspro-semibold-webfont.svg#source_sans_pro_semiboldRg") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("../fonts/sourcesanspro-regular-webfont.eot");
+  src: url("../fonts/sourcesanspro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-regular-webfont.woff") format("woff"), url("../fonts/sourcesanspro-regular-webfont.ttf") format("truetype"), url("../fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular") format("svg");
+  font-weight: 400; }
+
+/* Shadow mixins */
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.svg#icomoon") format("svg"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 24, common.scss */
+a {
+  color: #bd5862; }
+  /* line 26, common.scss */
+  a:hover {
+    color: #bd1c2b; }
+
+/* line 29, common.scss */
+body {
+  background-color: white;
+  color: #585858;
+  font-smoothing: antialiased;
+  line-height: 1.4; }
+
+/* line 36, common.scss */
+p {
+  margin: 1em 0;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; }
+
+/* line 43, common.scss */
+em {
+  font-style: italic; }
+
+/* line 45, common.scss */
+html {
+  font-size: 0.875em; }
+
+/* line 49, common.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 0 .4em;
+  padding: 0 0 .1em;
+  color: #777777; }
+
+/* line 56, common.scss */
+h1 {
+  font-size: 2.5em; }
+
+/* line 60, common.scss */
+h2 {
+  font-size: 2em; }
+
+/* line 64, common.scss */
+h3 {
+  font-size: 1em;
+  margin: 0; }
+
+/* line 69, common.scss */
+h4 {
+  font-size: 1.25em;
+  margin: 0 0 .1em; }
+
+/* line 74, common.scss */
+h5, h6 {
+  font-size: 1em;
+  margin: 0 0 .1em; }
+
+/* line 79, common.scss */
+input, textarea {
+  color: #777777;
+  background-color: #ffffff;
+  border: 1px solid lightgrey;
+  border-radius: .2em;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 1em;
+  padding: .33em .5em; }
+  /* line 142, base.scss */
+  input:focus, textarea:focus {
+    outline: 0;
+    border: 1px solid #969696;
+    -webkit-box-shadow: inset 1px 1px 6px -1px lightgrey;
+    -moz-box-shadow: inset 1px 1px 6px -1px lightgrey;
+    box-shadow: inset 1px 1px 6px -1px lightgrey; }
+
+/* line 83, common.scss */
+select {
+  color: #777777;
+  background-color: #ffffff;
+  border: 1px solid lightgrey;
+  border-radius: .2em;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 1em;
+  padding: .33em .5em;
+  padding: 0;
+  text-decoration: underline;
+  border: 0; }
+  /* line 142, base.scss */
+  select:focus {
+    outline: 0;
+    border: 1px solid #969696;
+    -webkit-box-shadow: inset 1px 1px 6px -1px lightgrey;
+    -moz-box-shadow: inset 1px 1px 6px -1px lightgrey;
+    box-shadow: inset 1px 1px 6px -1px lightgrey; }
+  /* line 88, common.scss */
+  select:focus {
+    border: 0; }
+
+/* line 99, common.scss */
+.btn {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f9f9f9));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  -webkit-border-radius: 0.15em;
+  -moz-border-radius: 0.15em;
+  -ms-border-radius: 0.15em;
+  -o-border-radius: 0.15em;
+  border-radius: 0.15em;
+  -webkit-box-shadow: inset 0 0.2em 0 rgba(255, 255, 255, 0.2), 0 0.05em 0.1em rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: inset 0 0.2em 0 rgba(255, 255, 255, 0.2), 0 0.05em 0.1em rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 0.2em 0 rgba(255, 255, 255, 0.2), 0 0.05em 0.1em rgba(0, 0, 0, 0.08);
+  color: #777777;
+  background-color: #ffffff;
+  border: 1px solid lightgrey;
+  border-radius: .2em;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 1em;
+  padding: .33em .5em;
+  cursor: pointer;
+  display: inline-block;
+  padding: .4em .9em .5em;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+  color: #777777; }
+  /* line 142, base.scss */
+  .btn:focus {
+    outline: 0;
+    border: 1px solid #969696;
+    -webkit-box-shadow: inset 1px 1px 6px -1px lightgrey;
+    -moz-box-shadow: inset 1px 1px 6px -1px lightgrey;
+    box-shadow: inset 1px 1px 6px -1px lightgrey; }
+  /* line 165, base.scss */
+  .btn:hover {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefe), color-stop(50%, #f4f4f4), color-stop(51%, #e2e2e2), color-stop(100%, #fdfdfd));
+    background-image: -webkit-linear-gradient(top, #fefefe 0%, #f4f4f4 50%, #e2e2e2 51%, #fdfdfd 100%);
+    background-image: -moz-linear-gradient(top, #fefefe 0%, #f4f4f4 50%, #e2e2e2 51%, #fdfdfd 100%);
+    background-image: -o-linear-gradient(top, #fefefe 0%, #f4f4f4 50%, #e2e2e2 51%, #fdfdfd 100%);
+    background-image: linear-gradient(top, #fefefe 0%, #f4f4f4 50%, #e2e2e2 51%, #fdfdfd 100%);
+    border-color: #969696 #969696 #777777;
+    color: black; }
+    /* line 170, base.scss */
+    .btn:hover > * {
+      opacity: 1;
+      color: black; }
+  /* line 176, base.scss */
+  .btn:active {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fcfcfc), color-stop(50%, #f3f3f3), color-stop(51%, #e1e1e1), color-stop(100%, #fbfbfb));
+    background-image: -webkit-linear-gradient(top, #fcfcfc 0%, #f3f3f3 50%, #e1e1e1 51%, #fbfbfb 100%);
+    background-image: -moz-linear-gradient(top, #fcfcfc 0%, #f3f3f3 50%, #e1e1e1 51%, #fbfbfb 100%);
+    background-image: -o-linear-gradient(top, #fcfcfc 0%, #f3f3f3 50%, #e1e1e1 51%, #fbfbfb 100%);
+    background-image: linear-gradient(top, #fcfcfc 0%, #f3f3f3 50%, #e1e1e1 51%, #fbfbfb 100%);
+    -webkit-box-shadow: inset 0 0.15em 0.25em rgba(0, 0, 0, 0.15), 0 0.05em 0.1em rgba(0, 0, 0, 0);
+    -moz-box-shadow: inset 0 0.15em 0.25em rgba(0, 0, 0, 0.15), 0 0.05em 0.1em rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0.15em 0.25em rgba(0, 0, 0, 0.15), 0 0.05em 0.1em rgba(0, 0, 0, 0);
+    border-color: #969696 #969696 #777777;
+    top: .1em; }
+
+/* line 108, common.scss */
+.inline-block {
+  display: inline-block; }
+
+/* line 112, common.scss */
+.tertiarytext {
+  font-size: .8em; }
+
+/* line 117, common.scss */
+.icon-hidden:before {
+  color: transparent; }
+/* line 120, common.scss */
+.icon-hidden:after {
+  color: transparent; }
+
+/* line 126, common.scss */
+.btn-link {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  background-color: transparent;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+  color: #bd5862;
+  position: static; }
+  /* line 136, common.scss */
+  .btn-link:hover {
+    color: #bd1c2b; }
+
+/* line 139, common.scss */
+.red {
+  color: #bd1c2b; }
+
+/* line 143, common.scss */
+.pull-left {
+  float: left; }
+
+/* line 147, common.scss */
+.pull-right {
+  float: right; }
+
+/* line 154, common.scss */
+.close {
+  float: right;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-image: url("../images/delete_1.png");
+  width: 1em;
+  height: 1em;
+  opacity: .2; }
+  /* line 161, common.scss */
+  .close:hover {
+    cursor: pointer;
+    opacity: .4; }
+
+/* line 170, common.scss */
+.form-horizontal {
+  display: inline-block; }
+  /* line 173, common.scss */
+  .form-horizontal .controls, .form-horizontal .control-group, .form-horizontal div, .form-horizontal fieldset,
+  .form-horizontal input, .form-horizontal button, .form-horizontal select, .form-horizontal textarea {
+    display: inline-block; }
+  /* line 176, common.scss */
+  .form-horizontal select, .form-horizontal textarea, .form-horizontal input, .form-horizontal button {
+    margin: .5em 0; }
+
+/* line 181, common.scss */
+.form-inline .control-group {
+  margin-bottom: 0; }
+
+/* line 184, common.scss */
+.form-vertical select, .form-vertical textarea, .form-vertical input, .form-vertical button {
+  margin-top: .75em; }
+
+/* line 189, common.scss */
+.req {
+  display: none; }
+
+/* line 193, common.scss */
+.visuallyhidden, label, .alert-block span.errorMsgLbl, .alert-block span.errorMsg {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+
+/* line 204, common.scss */
+.flag-icon {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .flag-icon:hover {
+    color: black;
+    opacity: 1; }
+  /* line 323, base.scss */
+  .flag-icon:before {
+    content: "\28";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-right: .3em;
+    speak: none;
+    font-weight: normal; }
+
+/* line 208, common.scss */
+.fave-icon {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .fave-icon:hover {
+    color: black;
+    opacity: 1; }
+  /* line 323, base.scss */
+  .fave-icon:before {
+    content: "\e006";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-right: .3em;
+    speak: none;
+    font-weight: normal; }
+  /* line 210, common.scss */
+  .fave-icon.checked:before {
+    content: "\e005"; }
+
+/* line 215, common.scss */
+.reply-icon {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .reply-icon:hover {
+    color: black;
+    opacity: 1; }
+  /* line 323, base.scss */
+  .reply-icon:before {
+    content: "\e004";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-right: .3em;
+    speak: none;
+    font-weight: normal; }
+
+/* line 219, common.scss */
+.share-icon {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .share-icon:hover {
+    color: black;
+    opacity: 1; }
+  /* line 323, base.scss */
+  .share-icon:before {
+    content: "\25";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-right: .3em;
+    speak: none;
+    font-weight: normal; }
+
+/* line 223, common.scss */
+.down-icon {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .down-icon:hover {
+    color: black;
+    opacity: 1; }
+  /* line 323, base.scss */
+  .down-icon:before {
+    content: "\e007";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-right: .3em;
+    speak: none;
+    font-weight: normal; }
+
+/* line 227, common.scss */
+.clipboard-icon {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .clipboard-icon:hover {
+    color: black;
+    opacity: 1; }
+  /* line 323, base.scss */
+  .clipboard-icon:before {
+    content: "\33";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-right: .3em;
+    speak: none;
+    font-weight: normal; }
+
+/* line 231, common.scss */
+.check-icon {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .check-icon:hover {
+    color: black;
+    opacity: 1; }
+  /* line 323, base.scss */
+  .check-icon:before {
+    content: "\35";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-right: .3em;
+    speak: none;
+    font-weight: normal; }
+
+/* line 235, common.scss */
+.x-icon {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .x-icon:hover {
+    color: black;
+    opacity: 1; }
+  /* line 323, base.scss */
+  .x-icon:before {
+    content: "\36";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-right: .3em;
+    speak: none;
+    font-weight: normal; }
+
+/* line 239, common.scss */
+.vis-icon {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .vis-icon:hover {
+    color: black;
+    opacity: 1; }
+  /* line 323, base.scss */
+  .vis-icon:before {
+    content: "\34";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-right: .3em;
+    speak: none;
+    font-weight: normal; }
+
+/* line 244, common.scss */
+.excerpt {
+  position: relative;
+  margin-bottom: 1em; }
+  /* line 247, common.scss */
+  .excerpt blockquote {
+    margin-bottom: 0; }
+  /* line 250, common.scss */
+  .excerpt .more, .excerpt .less {
+    font-size: .9em;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    text-align: right; }
+
+/* line 258, common.scss */
+blockquote {
+  color: #777777;
+  font-family: "Merriweather";
+  font-size: 1em;
+  margin-bottom: 1em;
+  padding: 0 1em; }
+  /* line 265, common.scss */
+  blockquote:before {
+    color: rgba(150, 150, 150, 0.5);
+    content: "\23";
+    font-family: "icomoon";
+    font-size: 6em;
+    position: absolute;
+    top: -0.2em;
+    left: -0.15em; }
+  /* line 275, common.scss */
+  blockquote:after {
+    color: rgba(150, 150, 150, 0.5);
+    content: "\24";
+    font-family: "icomoon";
+    font-size: 5em;
+    position: absolute;
+    right: -0.15em;
+    bottom: -0.1em; }
+
+/* line 289, common.scss */
+.dropdown {
+  position: relative; }
+  /* line 291, common.scss */
+  .dropdown span {
+    cursor: pointer; }
+    /* line 293, common.scss */
+    .dropdown span:hover {
+      color: black; }
+
+/* line 299, common.scss */
+.dropdown-toggle {
+  background-color: white;
+  cursor: pointer; }
+  /* line 302, common.scss */
+  .dropdown-toggle:active {
+    outline: 0; }
+  /* line 305, common.scss */
+  .dropdown-toggle:hover {
+    color: black; }
+
+/* line 310, common.scss */
+.dropdown-menu {
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  background: white;
+  border: solid 1px lightgrey;
+  left: 0;
+  float: left;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute; }
+  /* line 321, common.scss */
+  .dropdown-menu li {
+    line-height: 1;
+    margin: .4em .5em 0;
+    padding-bottom: .1em;
+    border-bottom: dotted 1px lightgrey;
+    white-space: nowrap;
+    cursor: pointer; }
+    /* line 328, common.scss */
+    .dropdown-menu li:hover {
+      color: black; }
+    /* line 332, common.scss */
+    .dropdown-menu li.selected {
+      color: black;
+      font-weight: 600;
+      line-height: 1; }
+      /* line 336, common.scss */
+      .dropdown-menu li.selected:before {
+        font-size: .7em; }
+    /* line 341, common.scss */
+    .dropdown-menu li.inactive {
+      font-weight: 400;
+      color: lightgrey;
+      cursor: default; }
+      /* line 345, common.scss */
+      .dropdown-menu li.inactive:hover {
+        color: lightgrey; }
+      /* line 348, common.scss */
+      .dropdown-menu li.inactive * {
+        cursor: default; }
+    /* line 352, common.scss */
+    .dropdown-menu li:last-child {
+      border-bottom: 0; }
+  /* line 357, common.scss */
+  .dropdown-menu a {
+    text-decoration: none;
+    color: inherit; }
+  /* line 363, common.scss */
+  .dropdown-menu.pull-right {
+    right: -1px;
+    left: auto;
+    text-align: right; }
+
+/* line 371, common.scss */
+.open > .dropdown-menu {
+  -webkit-transform: rotateX(0);
+  -moz-transform: rotateX(0);
+  -ms-transform: rotateX(0);
+  -o-transform: rotateX(0);
+  transform: rotateX(0);
+  opacity: 1;
+  pointer-events: auto; }
+
+/* line 382, common.scss */
+.visibility .dropdown-toggle {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .visibility .dropdown-toggle:hover {
+    color: black;
+    opacity: 1; }
+  /* line 334, base.scss */
+  .visibility .dropdown-toggle:after {
+    content: "\3c";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-left: .3em;
+    speak: none;
+    font-weight: normal; }
+/* line 385, common.scss */
+.visibility li {
+  text-decoration: none;
+  cursor: pointer;
+  color: #777777; }
+  /* line 318, base.scss */
+  .visibility li:hover {
+    color: black;
+    opacity: 1; }
+  /* line 334, base.scss */
+  .visibility li:after {
+    content: "\35";
+    vertical-align: -0.1em;
+    font-family: 'icomoon';
+    font-style: normal;
+    margin-left: .3em;
+    speak: none;
+    font-weight: normal; }
+  /* line 387, common.scss */
+  .visibility li:after {
+    opacity: 0; }
+  /* line 391, common.scss */
+  .visibility li.selected:after {
+    opacity: 1; }
+/* line 396, common.scss */
+.visibility .vis-public {
+  border-bottom: 1px solid lightgrey;
+  margin: .4em 0 0;
+  padding: 0 .5em 0; }
+
+/* line 405, common.scss */
+.nav-tabs {
+  *zoom: 1;
+  margin: 0 .5em; }
+  /* line 38, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .nav-tabs:after {
+    content: "";
+    display: table;
+    clear: both; }
+  /* line 409, common.scss */
+  .nav-tabs > li > a {
+    cursor: pointer;
+    float: left;
+    line-height: 1;
+    padding: .5em 1em;
+    padding-top: .25em;
+    margin-right: -0.5em;
+    margin-bottom: 0px;
+    position: relative;
+    text-decoration: none;
+    -webkit-box-shadow: 2px -10px 13px -8px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 2px -10px 13px -8px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 2px -10px 13px -8px rgba(0, 0, 0, 0.1) inset;
+    background: #fcfcfc;
+    border-top-right-radius: 2em 5em;
+    border-top-left-radius: 2em 5em;
+    color: #999;
+    border: 1px solid lightgrey;
+    border-bottom: none; }
+    /* line 195, base.scss */
+    .nav-tabs > li > a:hover {
+      background: white; }
+    /* line 198, base.scss */
+    .nav-tabs > li > a:active {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none; }
+  /* line 422, common.scss */
+  .nav-tabs > .active > a {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: #333;
+    font-weight: bold;
+    background: white;
+    z-index: 90; }
+
+/* line 431, common.scss */
+.tab-pane {
+  background: white;
+  border: solid thin lightgrey;
+  display: none;
+  margin-top: -1px;
+  padding: 1em;
+  position: relative; }
+  /* line 439, common.scss */
+  .tab-pane.active {
+    display: inherit !important; }
+  /* line 443, common.scss */
+  .tab-pane footer > ul {
+    text-align: right; }
+
+/* line 453, common.scss */
+.paper {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  border-radius: 0.2em;
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 1em; }
+
+/* line 464, common.scss */
+.annotation {
+  position: relative; }
+  /* line 466, common.scss */
+  .annotation .upper-left {
+    font-weight: bold;
+    color: #777777; }
+  /* line 471, common.scss */
+  .annotation .dialog {
+    width: 100%; }
+  /* line 475, common.scss */
+  .annotation .upper-right {
+    float: right;
+    display: inline-block;
+    line-height: 1.8em;
+    font-size: .8em; }
+  /* line 482, common.scss */
+  .annotation .body {
+    white-space: pre-wrap;
+    margin-bottom: .5em;
+    clear: both;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%; }
+    /* line 489, common.scss */
+    .annotation .body p:first-child {
+      margin-top: 0; }
+    /* line 492, common.scss */
+    .annotation .body p:last-child {
+      margin-bottom: 0; }
+  /* line 497, common.scss */
+  .annotation .message {
+    margin-bottom: .5em; }
+  /* line 501, common.scss */
+  .annotation .buttonbar {
+    margin-bottom: .5em; }
+  /* line 505, common.scss */
+  .annotation textarea {
+    min-height: 8em; }
+  /* line 509, common.scss */
+  .annotation .replycount {
+    font-size: .8em; }
+
+/* line 517, common.scss */
+.buttonbar {
+  *zoom: 1; }
+  /* line 38, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .buttonbar:after {
+    content: "";
+    display: table;
+    clear: both; }
+  /* line 519, common.scss */
+  .buttonbar > * {
+    margin-right: .5em;
+    display: inline-block; }
+
+/* line 527, common.scss */
+.magicontrols {
+  position: absolute;
+  -webkit-transition: right 0.1s ease-in-out;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition: right 0.1s ease-in-out 0.5s;
+  -o-transition: right 0.1s ease-in-out 0.5s;
+  transition: right 0.1s ease-in-out 0.5s;
+  right: -0.5em; }
+  /* line 531, common.scss */
+  .magicontrols > * {
+    display: inline-block; }
+  /* line 534, common.scss */
+  .magicontrols .go {
+    -webkit-transition: color 0.1s ease-in-out;
+    -webkit-transition-delay: 0.5s;
+    -moz-transition: color 0.1s ease-in-out 0.5s;
+    -o-transition: color 0.1s ease-in-out 0.5s;
+    transition: color 0.1s ease-in-out 0.5s;
+    font-size: .8em; }
+  /* line 539, common.scss */
+  .magicontrols .grow, .magicontrols .show {
+    -webkit-transition: font-size 0.1s ease-in-out, opacity 0.1s ease-in-out, margin 0.15s ease-in-out;
+    -webkit-transition-delay: 0.5s, 0.5s, 0.5s;
+    -moz-transition: font-size 0.1s ease-in-out 0.5s, opacity 0.1s ease-in-out 0.5s, margin 0.15s ease-in-out 0.5s;
+    -o-transition: font-size 0.1s ease-in-out 0.5s, opacity 0.1s ease-in-out 0.5s, margin 0.15s ease-in-out 0.5s;
+    transition: font-size 0.1s ease-in-out 0.5s, opacity 0.1s ease-in-out 0.5s, margin 0.15s ease-in-out 0.5s;
+    margin: 0; }
+  /* line 544, common.scss */
+  .magicontrols .grow {
+    font-size: .8em; }
+  /* line 547, common.scss */
+  .magicontrols .show {
+    font-size: 0;
+    opacity: 0; }
+  /* line 551, common.scss */
+  .annotation:hover .magicontrols {
+    right: 0; }
+    /* line 553, common.scss */
+    .annotation:hover .magicontrols .go {
+      color: transparent; }
+    /* line 556, common.scss */
+    .annotation:hover .magicontrols .grow, .annotation:hover .magicontrols .show {
+      margin-left: .5em;
+      font-size: 1em;
+      opacity: 1; }
+
+/* line 570, common.scss */
+.detail {
+  position: relative; }
+  /* line 572, common.scss */
+  .detail .paper > .threadexp {
+    display: none; }
+  /* line 577, common.scss */
+  .detail .annotator-listing {
+    border-left: 1px dotted #969696; }
+    /* line 580, common.scss */
+    .detail .annotator-listing .threadexp {
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      top: .8em;
+      left: -5px;
+      outline: 1px dotted #aaa;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      background-image: url("../images/minus_1.png"); }
+    /* line 590, common.scss */
+    .detail .annotator-listing > .detail, .detail .annotator-listing .writer {
+      padding-left: 1em;
+      padding-top: .35em; }
+      /* line 593, common.scss */
+      .detail .annotator-listing > .detail.squished, .detail .annotator-listing .writer.squished {
+        padding-left: 0; }
+  /* line 601, common.scss */
+  .detail.collapsed > .body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0; }
+  /* line 610, common.scss */
+  .detail.collapsed > .thread {
+    overflow: hidden; }
+  /* line 611, common.scss */
+  .detail.collapsed > .upper-left {
+    display: run-in;
+    margin-right: .25em; }
+  /* line 615, common.scss */
+  .detail.collapsed > .threadexp {
+    background-image: url("../images/plus_1.png"); }
+
+/* line 625, common.scss */
+.summary {
+  margin-bottom: 1em;
+  position: relative;
+  cursor: pointer; }
+  /* line 630, common.scss */
+  .summary:hover {
+    -webkit-box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);
+    bottom: 1px; }
+  /* line 635, common.scss */
+  .summary:active {
+    -webkit-box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.1);
+    bottom: 0px; }
+
+/* line 645, common.scss */
+.writer {
+  position: relative;
+  padding-left: 1em; }
+  /* line 649, common.scss */
+  .writer .upper-right {
+    font-size: 1em; }
+
+/* line 657, common.scss */
+.share-dialog .icon-input {
+  position: relative; }
+  /* line 659, common.scss */
+  .share-dialog .icon-input input {
+    padding-right: 1.4em;
+    position: relative; }
+  /* line 663, common.scss */
+  .share-dialog .icon-input div {
+    position: absolute;
+    right: .33em;
+    top: .6em; }
+
+/* line 671, common.scss */
+.flag-dialog {
+  margin-bottom: .5em; }
+  /* line 672, common.scss */
+  .flag-dialog textarea {
+    width: 100%;
+    min-height: 8em; }
+  /* line 676, common.scss */
+  .flag-dialog fieldset {
+    margin-bottom: .5em; }
+
+/* line 685, common.scss */
+.tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  padding: 5px;
+  font-size: 11px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  visibility: visible; }
+  /* line 694, common.scss */
+  .tooltip.in {
+    opacity: 0.8;
+    filter: alpha(opacity=80); }
+  /* line 698, common.scss */
+  .tooltip.top {
+    margin-top: -3px; }
+  /* line 701, common.scss */
+  .tooltip.right {
+    margin-left: 3px; }
+  /* line 704, common.scss */
+  .tooltip.bottom {
+    margin-top: 3px; }
+  /* line 707, common.scss */
+  .tooltip.left {
+    margin-left: -3px; }
+
+/* line 712, common.scss */
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  background-color: #000000;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  opacity: .9; }
+
+/* line 726, common.scss */
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid; }
+
+/* line 735, common.scss */
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color: #000000;
+  border-width: 5px 5px 0; }
+/* line 742, common.scss */
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-right-color: #000000;
+  border-width: 5px 5px 5px 0; }
+/* line 749, common.scss */
+.tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-left-color: #000000;
+  border-width: 5px 0 5px 5px; }
+/* line 756, common.scss */
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: #000000;
+  border-width: 0 5px 5px; }
+
+/* line 13, app.css.scss */
+body {
+  background-color: transparent;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  outline: 1px solid black; }
+
+/* line 22, app.css.scss */
+input:not([type="checkbox"]) {
+  width: 100%; }
+
+/* line 23, app.css.scss */
+svg {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+
+/* line 25, app.css.scss */
+input[type="checkbox"] {
+  vertical-align: middle; }
+
+/* line 32, app.css.scss */
+.nav a[data-target="#password-tab"],
+.nav a[data-target="#reset-tab"] {
+  display: none; }
+
+/* line 37, app.css.scss */
+.nav .active a[data-target="#password-tab"],
+.nav .active a[data-target="#reset-tab"] {
+  display: initial; }
+
+/* line 44, app.css.scss */
+.annotator-hide {
+  display: none;
+  visibility: hidden; }
+
+/* line 49, app.css.scss */
+.annotator-heatmap {
+  background: rgba(0, 0, 0, 0.1);
+  border: solid thin rgba(211, 211, 211, 0.4);
+  left: 17px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 25px; }
+
+/* line 62, app.css.scss */
+#gutter {
+  background: url("../images/noise_1.png");
+  background-attachment: fixed;
+  height: 100%;
+  margin-left: 42px;
+  position: relative; }
+
+/* line 70, app.css.scss */
+#wrapper {
+  height: 100%;
+  overflow: auto;
+  padding: 3.75em 1em 1em 1em;
+  -webkit-overflow-scrolling: touch; }
+
+/* line 80, app.css.scss */
+.heatmap-pointer {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-transition-property: -webkit-transform, left;
+  -moz-transition-property: -moz-transform, left;
+  -o-transition-property: -o-transform, left;
+  transition-property: transform, left;
+  -webkit-transition-duration: 1s, 0.2s;
+  -moz-transition-duration: 1s, 0.2s;
+  -o-transition-duration: 1s, 0.2s;
+  transition-duration: 1s, 0.2s;
+  -webkit-perspective: 100px;
+  -moz-perspective: 100px;
+  -ms-perspective: 100px;
+  -o-perspective: 100px;
+  perspective: 100px;
+  margin-top: -1em;
+  color: #666;
+  left: 0px;
+  position: fixed;
+  height: 20.1px;
+  width: 40.1px;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  cursor: pointer; }
+  /* line 97, app.css.scss */
+  .heatmap-pointer .svg {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/side_tab.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; }
+  /* line 106, app.css.scss */
+  .heatmap-pointer .label {
+    font-weight: bold;
+    font-size: 13.1px;
+    position: absolute;
+    text-decoration: none;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    left: 10px;
+    right: 2px;
+    position: absolute;
+    bottom: 1px; }
+  /* line 118, app.css.scss */
+  .heatmap-pointer:hover {
+    left: 2px; }
+  /* line 122, app.css.scss */
+  .heatmap-pointer.lower, .heatmap-pointer.upper {
+    -webkit-transition: margin-top 0.2s;
+    -moz-transition: margin-top 0.2s;
+    -o-transition: margin-top 0.2s;
+    transition: margin-top 0.2s;
+    left: 7px;
+    width: 33.1px;
+    height: 26.1px; }
+    /* line 127, app.css.scss */
+    .heatmap-pointer.lower .label, .heatmap-pointer.upper .label {
+      left: 0;
+      right: 0; }
+    /* line 132, app.css.scss */
+    .heatmap-pointer.lower:hover, .heatmap-pointer.upper:hover {
+      left: 7px; }
+  /* line 138, app.css.scss */
+  .heatmap-pointer.upper .svg {
+    background-image: url("../images/up_tab.svg"); }
+  /* line 141, app.css.scss */
+  .heatmap-pointer.upper .label {
+    bottom: 1px; }
+  /* line 144, app.css.scss */
+  .heatmap-pointer.upper:hover {
+    margin-top: -1.2em; }
+  /* line 150, app.css.scss */
+  .heatmap-pointer.lower .svg {
+    background-image: url("../images/down_tab.svg"); }
+  /* line 153, app.css.scss */
+  .heatmap-pointer.lower .label {
+    top: 1px; }
+  /* line 156, app.css.scss */
+  .heatmap-pointer.lower:hover {
+    margin-top: -0.8em; }
+  /* line 160, app.css.scss */
+  .heatmap-pointer.flip {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg); }
+    /* line 162, app.css.scss */
+    .heatmap-pointer.flip .label {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg); }
+
+/* line 172, app.css.scss */
+.sheet {
+  -webkit-box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  z-index: 4;
+  background: url("../images/noise_1.png");
+  background-attachment: fixed;
+  margin-top: 2.5em;
+  padding-top: 1em;
+  position: absolute;
+  width: 100%; }
+  /* line 184, app.css.scss */
+  .sheet .close {
+    margin-right: .5em;
+    margin-top: .25em; }
+  /* line 189, app.css.scss */
+  .sheet.collapsed {
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    opacity: 0;
+    pointer-events: none; }
+  /* line 195, app.css.scss */
+  .sheet.info {
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border-color: #98BED1; }
+  /* line 200, app.css.scss */
+  .sheet.good {
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #8DC98E; }
+  /* line 205, app.css.scss */
+  .sheet.bad {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #F5A1A0; }
+
+/* line 215, app.css.scss */
+#toolbar {
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  background: white;
+  border: 1px solid lightgrey;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  left: 1px;
+  line-height: 20px;
+  margin-top: .5em;
+  padding: .3em;
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  z-index: 5;
+  left: 7px; }
+  /* line 231, app.css.scss */
+  #toolbar > div {
+    display: inline-block;
+    vertical-align: top; }
+    /* line 235, app.css.scss */
+    #toolbar > div:last-child {
+      border-left: 1px solid lightgrey; }
+  /* line 240, app.css.scss */
+  #toolbar .tri {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-image: url("../images/tri-left.png");
+    float: left;
+    width: 20px;
+    height: 20px;
+    cursor: pointer; }
+  /* line 248, app.css.scss */
+  #toolbar .my-history {
+    text-decoration: none;
+    cursor: pointer;
+    color: #777777;
+    float: left; }
+    /* line 318, base.scss */
+    #toolbar .my-history:hover {
+      color: black;
+      opacity: 1; }
+    /* line 323, base.scss */
+    #toolbar .my-history:before {
+      content: "\37";
+      vertical-align: -0.1em;
+      font-family: 'icomoon';
+      font-style: normal;
+      margin-right: .3em;
+      speak: none;
+      font-weight: normal; }
+  /* line 254, app.css.scss */
+  #toolbar.shown .tri {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-image: url("../images/tri-right.png");
+    margin-right: .7em; }
+
+/* line 261, app.css.scss */
+.tinyman {
+  padding: 0 .3em; }
+  /* line 264, app.css.scss */
+  .tinyman .avatar {
+    border-radius: 2px; }
+  /* line 268, app.css.scss */
+  .tinyman .dropdown-toggle {
+    text-decoration: none;
+    cursor: pointer;
+    color: #777777; }
+    /* line 318, base.scss */
+    .tinyman .dropdown-toggle:hover {
+      color: black;
+      opacity: 1; }
+    /* line 334, base.scss */
+    .tinyman .dropdown-toggle:after {
+      content: "\3c";
+      vertical-align: -0.1em;
+      font-family: 'icomoon';
+      font-style: normal;
+      margin-left: .3em;
+      speak: none;
+      font-weight: normal; }
+    /* line 270, app.css.scss */
+    .tinyman .dropdown-toggle .provider {
+      color: #969696;
+      display: none; }
+    /* line 275, app.css.scss */
+    .tinyman .dropdown-toggle:hover .provider {
+      display: inline; }
+  /* line 281, app.css.scss */
+  .tinyman.open .provider {
+    display: inline; }
+
+/* line 290, app.css.scss */
+.noiseknockout {
+  *zoom: 1;
+  background: url("../images/noise_1.png");
+  background-attachment: fixed;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  margin-bottom: .5em;
+  padding: 1em;
+  padding-bottom: 0; }
+  /* line 38, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .noiseknockout:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 300, app.css.scss */
+.page {
+  margin-bottom: .5em;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+  /* line 306, app.css.scss */
+  .page a {
+    font-weight: 600; }
+  /* line 309, app.css.scss */
+  .page .favicon {
+    vertical-align: bottom;
+    margin-right: .5em; }
+
+/* line 317, app.css.scss */
+.annotator-heatmap {
+  position: absolute; }
+
+/* line 321, app.css.scss */
+.heatmap-pointer {
+  position: absolute; }
+  /* line 327, app.css.scss */
+  .heatmap-pointer.lower {
+    bottom: 5px; }
+
+/* line 332, app.css.scss */
+.wrapper {
+  background: url("../images/noise_1.png");
+  background-attachment: fixed;
+  height: 100%;
+  overflow: auto;
+  padding: 4em 1em 1em 1em;
+  position: absolute; }
+
+/* line 341, app.css.scss */
+#wrapper1 {
+  -webkit-transition-property: padding-left;
+  -moz-transition-property: padding-left;
+  -o-transition-property: padding-left;
+  transition-property: padding-left;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  -moz-transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  -o-transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  padding-right: 1em; }
+  /* line 346, app.css.scss */
+  #wrapper1.compressed {
+    padding-left: .5em;
+    padding-right: 1em; }
+
+/* line 356, app.css.scss */
+#wrapper2 {
+  -webkit-transition-property: right;
+  -moz-transition-property: right;
+  -o-transition-property: right;
+  transition-property: right;
+  -webkit-transition-property: left;
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  transition-property: left;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  width: 414px;
+  left: 35em;
+  border-left: 1px solid lightgrey;
+  -webkit-box-shadow: 0px -10px 9px -2px #777777;
+  -moz-box-shadow: 0px -10px 9px -2px #777777;
+  box-shadow: 0px -10px 9px -2px #777777;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+  /* line 367, app.css.scss */
+  #wrapper2.out {
+    left: 1em; }
+
+/* line 372, app.css.scss */
+#wrapper3 {
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  -moz-transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  -o-transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  background: url("../images/noise_2.png");
+  padding-right: .5em;
+  padding-left: .5em;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%; }
+  /* line 382, app.css.scss */
+  #wrapper3.shown {
+    opacity: 1;
+    pointer-events: auto; }
+
+/* line 389, app.css.scss */
+.detail .bottombar {
+  margin-top: .25em; }
